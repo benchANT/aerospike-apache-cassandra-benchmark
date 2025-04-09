@@ -1,0 +1,122 @@
+
+    [
+      {
+        "metadata": {
+          "userId": "benchANT",
+          "projectId": "aerospike",
+          "batchId": "calibration",
+          "configurationId": "aws-cassandra-503-200-threads",
+          "configurationLabel": "aws-cassandra-503-200-threads",
+          "executions": 1,
+          "executionCounter": 0,
+          "keepDeployment": false
+        },
+        "resourceProvider": {
+           "name": "EC2",
+          "api": "EC2"
+        },
+        "dbmsDeployment": {
+          "dbmsType": "CASSANDRA",
+          "operationType": "DBMS",
+          "version": "5.0.3",
+          "DBMS": {
+            "dataNodes": {
+              "numberOfNodes": 6,
+              "resource": {
+                    "ec2Vm": {
+                      "regionName": "eu-west-1",
+                                "zones": [
+                                      "eu-west-1b"
+                                  ],
+                      "instanceType": "i4g.4xlarge",
+                      "architecture": "arm64",
+                      "imageDistribution": "ubuntu",
+                      "imageVersion": "22.04",
+                      "volumeType": "GP3",
+                      "volumeSize": 100
+					}
+                },
+              "replicationFactor": 3,
+                "memoryAllocation": 0.24,
+                "osConfiguration": {
+                  "swap": false,
+                  "vmMinFreeKbytes": 1200000,
+                  "transparentHugePagesDefrag": "NEVER"
+                },
+                "cassandraConfiguration": {
+                    "cassandraServerConfiguration": {
+                        "compactionStrategy": "UnifiedCompactionStrategy",
+                        "sstableFormat": "bti",
+                        "memtable": "TrieMemtable",
+                        "javaConfig": {
+                            "version": 17,
+                            "garbageCollector": "ZGC"
+                          }
+                    },
+                    "cassandraClientConfiguration": {
+                        "writeConsistency": "QUORUM"
+                        }
+                  }
+            }
+          }
+        },
+        "benchmarkDeployment": {
+          "benchmarkNodes": {
+            "numberOfNodes": 1,
+            "resource": {
+                "ec2Vm": {
+				  "regionName": "eu-west-1",
+                  "zones": [
+                            "eu-west-1b"
+                        ],
+				  "instanceType": "c6i.8xlarge",
+				  "architecture": "x86_64",
+				  "imageDistribution": "ubuntu",
+				  "imageVersion": "20.04",
+				  "volumeType": "GP2",
+				  "volumeSize": 50
+				}	
+            }
+          }
+        },
+        "benchmark": {
+          "id": "production",
+          "distribution": "YCSB",
+          "version": "benchant-aerospike",
+          "ycsb": {
+            "executeLoadPhase": true,
+            "executeRunPhase": true,
+            "dbmsEndpoints": [],
+            "workload": {
+                "workloadType": "LOAD",
+                "workloadClass": "site.ycsb.workloads.CoreWorkload",
+                "maxExecutionTime": 86400,
+                "threadCount": 200,
+                "recordCount": 50000000,
+                "insertStart": 0,
+                "insertCount": 0,
+                "operations": 2800000000,
+                "targetOps": 0,
+                "fieldCount": 10,
+                "fieldLength": 200,
+                "readAllFileds": true,
+                "readModifyWriteProportion": 0,
+                "requestdistribution": "uniform-growing",
+                "scanLengthDistribution": "UNIFORM",
+                "insertOrder": "ORDERED",
+                "readProportion": 0.5,
+                "updateProportion": 0.06,
+                "insertProportion": 0.4,
+                "scanProportion": 0.0,
+                "deleteProportion": 0.04,
+                "queryProportion": 0.0,
+                "maxScanLength": 1000,
+                "coreWorkloadInsertionRetryLimit": 3,
+                "coreWorkloadInsertionRetryInterval": 3,
+                "loadBatchSize": 1,
+                "runBatchSize": 1
+                }
+          }
+        }
+      }
+    ]

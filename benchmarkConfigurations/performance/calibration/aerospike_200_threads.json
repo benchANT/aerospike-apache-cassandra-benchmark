@@ -1,0 +1,143 @@
+[
+    {
+        "metadata": {
+          "userId": "benchANT",
+          "projectId": "aerospike",
+          "batchId": "calibration",
+          "configurationId": "aws-aerospike-ee-8004-200-threads",
+          "configurationLabel": "aws-aerospike-ee-8004-200-threads",
+          "executions": 1,
+          "executionCounter": 0,
+          "keepDeployment": false
+        },
+        "resourceProvider": {
+           "name": "EC2",
+          "api": "EC2"
+        },
+        "dbmsDeployment": {
+          "dbmsType": "AEROSPIKE",
+          "operationType": "DBMS",
+          "version": "8.0.0.4",
+          "license": "ENTERPRISE",
+          "DBMS": {
+            "dataNodes": {
+              "numberOfNodes": 4,
+              "resource": {
+                    "ec2Vm": {
+					  "regionName": "eu-west-1",
+                      "zones": [
+                            "eu-west-1c"
+                        ],
+					  "instanceType": "i4g.4xlarge",
+					  "architecture": "arm64",
+					  "imageDistribution": "ubuntu",
+					  "imageVersion": "22.04",
+					  "volumeType": "GP3",
+					  "volumeSize": 100
+					}
+                },
+              "replicationFactor": 2,
+              "osConfiguration": {
+                "swap": false,
+                "vmMinFreeKbytes": 1200000,
+                "transparentHugePages": "NEVER",
+                "transparentHugePagesDefrag": "NEVER"
+              },
+              "aerospikeConfiguration": {
+                "aerospikeServerConfiguration": {
+                  "toolsVersion": "11.2.0",
+                  "storageEngine": "DEVICE",
+                  "serviceConfig": {
+                    "maxClientConnectionsPerServer": 50000,
+                    "queryThreadsLimit": 1024
+                  },
+                  "networkConfig": {
+                    "heartbeatConfig": {
+                      "interval": 150,
+                      "timeout": 10
+                    }
+                  },
+                  "namespaceConfig": {
+                    "defaultTtl": "0",
+                    "nsupPeriod": "0",
+                    "stopWritesSystemMemoryPct": 90,
+                    "deviceConfig": {
+                      "stopWritesAvailPct": 5,
+                      "stopWritesUsedPct": 70,
+                      "partitions": 5
+                    }
+                  }
+                },
+                "aerospikeClientConfiguration": {
+                  "connectionsPerNode": 2400,
+                  "connectionPoolsPerNode": 1,
+                  "writeCommitLevel": "COMMIT_ALL",
+                  "useCompression": false
+                }
+              }
+            }
+          }
+        },
+        "benchmarkDeployment": {
+          "benchmarkNodes": {
+            "numberOfNodes": 1,
+            "resource": {
+                "ec2Vm": {
+				  "regionName": "eu-west-1",
+                  "zones": [
+                            "eu-west-1c"
+                        ],
+				  "instanceType": "c6i.8xlarge",
+				  "architecture": "x86_64",
+				  "imageDistribution": "ubuntu",
+				  "imageVersion": "20.04",
+				  "volumeType": "GP2",
+				  "volumeSize": 50
+				}	
+            }
+          }
+        },
+        "benchmark": {
+          "id": "production",
+          "distribution": "YCSB",
+          "version": "benchant-aerospike",
+          "ycsb": {
+            "executeLoadPhase": true,
+            "executeRunPhase": true,
+            "dbmsEndpoints": [],
+            "workload": {
+                "workloadType": "LOAD",
+                "workloadClass": "site.ycsb.workloads.CoreWorkload",
+                "maxExecutionTime": 86400,
+                "threadCount": 200,
+                "recordCount": 50000000,
+                "insertStart": 0,
+                "insertCount": 0,
+                "operations": 2800000000,
+                "targetOps": 0,
+                "fieldCount": 10,
+                "fieldLength": 200,
+                "readAllFileds": true,
+                "readModifyWriteProportion": 0,
+                "requestdistribution": "uniform-growing",
+                "scanLengthDistribution": "UNIFORM",
+                "insertOrder": "ORDERED",
+                "readProportion": 0.5,
+                "updateProportion": 0.06,
+                "insertProportion": 0.4,
+                "scanProportion": 0.0,
+                "deleteProportion": 0.04,
+                "queryProportion": 0.0,
+                "maxScanLength": 1000,
+                "coreWorkloadInsertionRetryLimit": 3,
+                "coreWorkloadInsertionRetryInterval": 3,
+                "loadBatchSize": 1,
+                "runBatchSize": 1
+                }
+          }
+        },
+        "monitoring": {
+          "aerospike": "3.255.146.186"
+        }
+      }
+]
