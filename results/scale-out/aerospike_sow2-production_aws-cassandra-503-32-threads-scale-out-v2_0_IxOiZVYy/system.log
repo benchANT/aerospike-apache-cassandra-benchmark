@@ -1,0 +1,837 @@
+INFO  [Notification Thread] 2025-03-29 00:00:04,057 GCInspector.java:285 - ZGC Cycles GC in 483ms.  ZHeap: 26136805376 -> 2118123520
+INFO  [CompactionExecutor:4] 2025-03-29 00:00:12,491 CompactionTask.java:167 - Compacting (c95f12a0-0c30-11f0-9d78-09f9665dc9f7) [/data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-2809-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3023-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3017-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3253-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3392-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3580-bti-Data.db:level=0, ]
+INFO  [SlabPoolCleaner] 2025-03-29 00:00:40,711 AbstractAllocatorMemtable.java:293 - Flushing largest CFS(Keyspace='ycsb', ColumnFamily='usertable') to free up room. Used total: 0.33/0.00, live: 0.33/0.00, flushing: 0.00/0.00, this: 0.33/0.00
+INFO  [SlabPoolCleaner] 2025-03-29 00:00:40,711 ColumnFamilyStore.java:1052 - Enqueuing flush of ycsb.usertable, Reason: MEMTABLE_LIMIT, Usage: 2.485GiB (33%) on-heap, 0B (0%) off-heap
+INFO  [PerDiskMemtableFlushWriter_0:534] 2025-03-29 00:00:41,295 Flushing.java:153 - Writing Memtable-usertable@259255454(1.457GiB serialized bytes, 866410 ops, 2.485GiB (33%) on-heap, 0B (0%) off-heap), flushed range = [min(-9223372036854775808), max(9223372036854775807))
+WARN  [Notification Thread] 2025-03-29 00:00:44,640 GCInspector.java:283 - ZGC Cycles GC in 2466ms.  ZHeap: 26000490496 -> 4599054336
+INFO  [Notification Thread] 2025-03-29 00:00:44,641 StatusLogger.java:67 - Pool Name                       Active   Pending      Completed   Blocked  All Time Blocked
+INFO  [Notification Thread] 2025-03-29 00:00:44,641 StatusLogger.java:71 - ReadStage                            1         0      284017433         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,641 StatusLogger.java:71 - Native-Transport-Auth-Requests         0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,641 StatusLogger.java:71 - CompactionExecutor                   2        34          25869         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,641 StatusLogger.java:71 - SecondaryIndexExecutor               0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,641 StatusLogger.java:71 - MutationStage                        0         0      454704162         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,641 StatusLogger.java:71 - MemtableReclaimMemory                0         0            659         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,641 StatusLogger.java:71 - PendingRangeCalculator               0         0             14         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,641 StatusLogger.java:71 - GossipStage                          0         0         206648         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,641 StatusLogger.java:71 - SecondaryIndexManagement             0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - HintsDispatcher                      0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - Native-Transport-Requests            4         0      315182201         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - RequestResponseStage                 1         0      538280162         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - MigrationStage                       0         0             13         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - StatusPropagationExecutor            0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - MemtableFlushWriter                  1         0            659         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - MemtablePostFlush                    1         0            784         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - PerDiskMemtableFlushWriter_0         1         0            655         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - Sampler                              0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - ValidationExecutor                   0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - ViewBuildExecutor                    0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - InternalResponseStage                0         0          10891         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,642 StatusLogger.java:71 - CacheCleanupExecutor                 0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:44,643 StatusLogger.java:81 - CompactionManager                 2        10
+INFO  [Notification Thread] 2025-03-29 00:00:44,643 StatusLogger.java:93 - MessagingService                n/a       0/0
+INFO  [Notification Thread] 2025-03-29 00:00:44,643 StatusLogger.java:103 - Cache Type                     Size                 Capacity               KeysToSave
+INFO  [Notification Thread] 2025-03-29 00:00:44,643 StatusLogger.java:105 - KeyCache                          0                104857600                      all
+INFO  [Notification Thread] 2025-03-29 00:00:44,643 StatusLogger.java:111 - RowCache                          0                        0                      all
+INFO  [Notification Thread] 2025-03-29 00:00:44,643 StatusLogger.java:118 - Table                       Memtable ops,data
+INFO  [Notification Thread] 2025-03-29 00:00:44,643 StatusLogger.java:121 - system_traces.sessions                    0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,643 StatusLogger.java:121 - system_traces.events                      0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,643 StatusLogger.java:121 - system_distributed.parent_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,643 StatusLogger.java:121 - system_distributed.repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_distributed.partition_denylist                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_distributed.view_build_status                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_auth.roles                         0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_auth.identity_to_role                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_auth.role_members                  0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_auth.cidr_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_auth.resource_role_permissons_index                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_auth.network_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_auth.cidr_groups                   0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_auth.role_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - ycsb.usertable                 35922,64982368
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_schema.columns                     0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_schema.column_masks                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_schema.types                       0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_schema.indexes                     0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_schema.keyspaces                   0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,644 StatusLogger.java:121 - system_schema.dropped_columns                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system_schema.aggregates                  0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system_schema.triggers                    0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system_schema.tables                      0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system_schema.views                       0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system_schema.functions                   0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.compaction_history             25,8392
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.IndexInfo                          0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.repairs                            0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.size_estimates              1530,31330
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.table_estimates             3060,67428
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.paxos                              0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.sstable_activity_v2            136,1088
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.paxos_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.built_views                        0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.peer_events                        0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.peers_v2                           0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.peers                              0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.peer_events_v2                     0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,645 StatusLogger.java:121 - system.batches                            0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,646 StatusLogger.java:121 - system.transferred_ranges                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,646 StatusLogger.java:121 - system.transferred_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,646 StatusLogger.java:121 - system.view_builds_in_progress                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,646 StatusLogger.java:121 - system.local                              0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,646 StatusLogger.java:121 - system.sstable_activity              136,1088
+INFO  [Notification Thread] 2025-03-29 00:00:44,646 StatusLogger.java:121 - system.top_partitions                     0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,646 StatusLogger.java:121 - system.available_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,646 StatusLogger.java:121 - system.available_ranges                   0,0
+INFO  [Notification Thread] 2025-03-29 00:00:44,646 StatusLogger.java:121 - system.prepared_statements                 0,0
+WARN  [Notification Thread] 2025-03-29 00:00:51,780 GCInspector.java:283 - ZGC Cycles GC in 1107ms.  ZHeap: 8984199168 -> 4273995776
+INFO  [Notification Thread] 2025-03-29 00:00:51,781 StatusLogger.java:67 - Pool Name                       Active   Pending      Completed   Blocked  All Time Blocked
+INFO  [Notification Thread] 2025-03-29 00:00:51,781 StatusLogger.java:71 - ReadStage                            1         1      284059322         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,781 StatusLogger.java:71 - Native-Transport-Auth-Requests         0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,781 StatusLogger.java:71 - CompactionExecutor                   2        34          25869         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,781 StatusLogger.java:71 - SecondaryIndexExecutor               0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,781 StatusLogger.java:71 - MutationStage                        1         0      454767324         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - MemtableReclaimMemory                0         0            659         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - PendingRangeCalculator               0         0             14         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - GossipStage                          0         0         206667         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - SecondaryIndexManagement             0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - HintsDispatcher                      0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - Native-Transport-Requests            5         0      315225909         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - RequestResponseStage                 0         0      538353507         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - MigrationStage                       0         0             13         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - StatusPropagationExecutor            0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - MemtableFlushWriter                  1         0            659         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - MemtablePostFlush                    1         0            784         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - PerDiskMemtableFlushWriter_0         1         0            655         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - Sampler                              0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - ValidationExecutor                   0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - ViewBuildExecutor                    0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - InternalResponseStage                0         0          10891         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,782 StatusLogger.java:71 - CacheCleanupExecutor                 0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:00:51,783 StatusLogger.java:81 - CompactionManager                 2        10
+INFO  [Notification Thread] 2025-03-29 00:00:51,783 StatusLogger.java:93 - MessagingService                n/a       0/0
+INFO  [Notification Thread] 2025-03-29 00:00:51,783 StatusLogger.java:103 - Cache Type                     Size                 Capacity               KeysToSave
+INFO  [Notification Thread] 2025-03-29 00:00:51,783 StatusLogger.java:105 - KeyCache                          0                104857600                      all
+INFO  [Notification Thread] 2025-03-29 00:00:51,783 StatusLogger.java:111 - RowCache                          0                        0                      all
+INFO  [Notification Thread] 2025-03-29 00:00:51,783 StatusLogger.java:118 - Table                       Memtable ops,data
+INFO  [Notification Thread] 2025-03-29 00:00:51,783 StatusLogger.java:121 - system_traces.sessions                    0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,783 StatusLogger.java:121 - system_traces.events                      0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,783 StatusLogger.java:121 - system_distributed.parent_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,783 StatusLogger.java:121 - system_distributed.repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_distributed.partition_denylist                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_distributed.view_build_status                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_auth.roles                         0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_auth.identity_to_role                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_auth.role_members                  0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_auth.cidr_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_auth.resource_role_permissons_index                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_auth.network_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_auth.cidr_groups                   0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_auth.role_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - ycsb.usertable               101726,183869230
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_schema.columns                     0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,784 StatusLogger.java:121 - system_schema.column_masks                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system_schema.types                       0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system_schema.indexes                     0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system_schema.keyspaces                   0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system_schema.dropped_columns                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system_schema.aggregates                  0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system_schema.triggers                    0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system_schema.tables                      0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system_schema.views                       0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system_schema.functions                   0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system.compaction_history             25,8392
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system.IndexInfo                          0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system.repairs                            0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system.size_estimates              1530,31330
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system.table_estimates             3060,67428
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system.paxos                              0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system.sstable_activity_v2            136,1088
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system.paxos_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system.built_views                        0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,785 StatusLogger.java:121 - system.peer_events                        0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.peers_v2                           0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.peers                              0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.peer_events_v2                     0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.batches                            0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.transferred_ranges                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.transferred_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.view_builds_in_progress                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.local                              0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.sstable_activity              136,1088
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.top_partitions                     0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.available_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.available_ranges                   0,0
+INFO  [Notification Thread] 2025-03-29 00:00:51,786 StatusLogger.java:121 - system.prepared_statements                 0,0
+INFO  [PerDiskMemtableFlushWriter_0:534] 2025-03-29 00:00:54,315 Flushing.java:179 - Completed flushing /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3595-bti-Data.db (1.350GiB) for commitlog position CommitLogPosition(segmentId=1743161500069, position=23880727)
+WARN  [Notification Thread] 2025-03-29 00:01:23,638 GCInspector.java:283 - ZGC Cycles GC in 2664ms.  ZHeap: 22454206464 -> 3089104896
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:67 - Pool Name                       Active   Pending      Completed   Blocked  All Time Blocked
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:71 - ReadStage                            3         0      284248410         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:71 - Native-Transport-Auth-Requests         0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:71 - CompactionExecutor                   2        48          25869         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:71 - SecondaryIndexExecutor               0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:71 - MutationStage                        1         1      455051529         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:71 - MemtableReclaimMemory                0         0            660         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:71 - PendingRangeCalculator               0         0             14         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:71 - GossipStage                          0         0         206809         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:71 - SecondaryIndexManagement             0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:71 - HintsDispatcher                      0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,639 StatusLogger.java:71 - Native-Transport-Requests            2         0      315425404         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:71 - RequestResponseStage                 0         0      538688111         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:71 - MigrationStage                       0         0             13         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:71 - StatusPropagationExecutor            0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:71 - MemtableFlushWriter                  0         0            660         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:71 - MemtablePostFlush                    0         0            785         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:71 - PerDiskMemtableFlushWriter_0         0         0            656         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:71 - Sampler                              0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:71 - ValidationExecutor                   0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:71 - ViewBuildExecutor                    0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:71 - InternalResponseStage                0         0          10891         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:71 - CacheCleanupExecutor                 0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:01:23,640 StatusLogger.java:81 - CompactionManager                 2        10
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:93 - MessagingService                n/a       0/1
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:103 - Cache Type                     Size                 Capacity               KeysToSave
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:105 - KeyCache                          0                104857600                      all
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:111 - RowCache                          0                        0                      all
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:118 - Table                       Memtable ops,data
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_traces.sessions                    0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_traces.events                      0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_distributed.parent_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_distributed.repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_distributed.partition_denylist                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_distributed.view_build_status                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_auth.roles                         0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_auth.identity_to_role                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_auth.role_members                  0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_auth.cidr_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_auth.resource_role_permissons_index                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_auth.network_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,641 StatusLogger.java:121 - system_auth.cidr_groups                   0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_auth.role_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - ycsb.usertable               397931,719132506
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_schema.columns                     0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_schema.column_masks                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_schema.types                       0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_schema.indexes                     0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_schema.keyspaces                   0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_schema.dropped_columns                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_schema.aggregates                  0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_schema.triggers                    0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_schema.tables                      0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_schema.views                       0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system_schema.functions                   0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system.compaction_history             25,8392
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system.IndexInfo                          0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system.repairs                            0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system.size_estimates              1530,31330
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system.table_estimates             3060,67428
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system.paxos                              0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,642 StatusLogger.java:121 - system.sstable_activity_v2            136,1088
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.paxos_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.built_views                        0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.peer_events                        0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.peers_v2                           0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.peers                              0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.peer_events_v2                     0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.batches                            0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.transferred_ranges                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.transferred_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.view_builds_in_progress                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.local                              0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.sstable_activity              136,1088
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.top_partitions                     0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.available_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.available_ranges                   0,0
+INFO  [Notification Thread] 2025-03-29 00:01:23,643 StatusLogger.java:121 - system.prepared_statements                 0,0
+INFO  [Notification Thread] 2025-03-29 00:01:31,366 GCInspector.java:285 - ZGC Cycles GC in 792ms.  ZHeap: 7216300032 -> 2424307712
+INFO  [Notification Thread] 2025-03-29 00:02:01,791 GCInspector.java:285 - ZGC Cycles GC in 517ms.  ZHeap: 20927479808 -> 2841640960
+INFO  [SlabPoolCleaner] 2025-03-29 00:02:14,211 AbstractAllocatorMemtable.java:293 - Flushing largest CFS(Keyspace='ycsb', ColumnFamily='usertable') to free up room. Used total: 0.33/0.00, live: 0.33/0.00, flushing: 0.00/0.00, this: 0.33/0.00
+INFO  [SlabPoolCleaner] 2025-03-29 00:02:14,211 ColumnFamilyStore.java:1052 - Enqueuing flush of ycsb.usertable, Reason: MEMTABLE_LIMIT, Usage: 2.485GiB (33%) on-heap, 0B (0%) off-heap
+INFO  [PerDiskMemtableFlushWriter_0:535] 2025-03-29 00:02:14,707 Flushing.java:153 - Writing Memtable-usertable@1810185569(1.457GiB serialized bytes, 866491 ops, 2.485GiB (33%) on-heap, 0B (0%) off-heap), flushed range = [min(-9223372036854775808), max(9223372036854775807))
+INFO  [PerDiskMemtableFlushWriter_0:535] 2025-03-29 00:02:27,309 Flushing.java:179 - Completed flushing /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3600-bti-Data.db (1.350GiB) for commitlog position CommitLogPosition(segmentId=1743161500115, position=8338017)
+INFO  [Notification Thread] 2025-03-29 00:02:36,713 GCInspector.java:285 - ZGC Cycles GC in 239ms.  ZHeap: 25694306304 -> 996147200
+INFO  [Notification Thread] 2025-03-29 00:03:12,149 GCInspector.java:285 - ZGC Cycles GC in 475ms.  ZHeap: 23003660288 -> 2172649472
+INFO  [SlabPoolCleaner] 2025-03-29 00:03:47,773 AbstractAllocatorMemtable.java:293 - Flushing largest CFS(Keyspace='ycsb', ColumnFamily='usertable') to free up room. Used total: 0.33/0.00, live: 0.33/0.00, flushing: 0.00/0.00, this: 0.33/0.00
+INFO  [SlabPoolCleaner] 2025-03-29 00:03:47,773 ColumnFamilyStore.java:1052 - Enqueuing flush of ycsb.usertable, Reason: MEMTABLE_LIMIT, Usage: 2.485GiB (33%) on-heap, 0B (0%) off-heap
+INFO  [PerDiskMemtableFlushWriter_0:536] 2025-03-29 00:03:48,339 Flushing.java:153 - Writing Memtable-usertable@1586925888(1.457GiB serialized bytes, 866738 ops, 2.485GiB (33%) on-heap, 0B (0%) off-heap), flushed range = [min(-9223372036854775808), max(9223372036854775807))
+WARN  [Notification Thread] 2025-03-29 00:03:53,341 GCInspector.java:283 - ZGC Cycles GC in 4867ms.  ZHeap: 24442306560 -> 6828326912
+INFO  [Notification Thread] 2025-03-29 00:03:53,342 StatusLogger.java:67 - Pool Name                       Active   Pending      Completed   Blocked  All Time Blocked
+INFO  [Notification Thread] 2025-03-29 00:03:53,342 StatusLogger.java:71 - ReadStage                            3         0      285134727         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,342 StatusLogger.java:71 - Native-Transport-Auth-Requests         0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,342 StatusLogger.java:71 - CompactionExecutor                   2        48          25869         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,342 StatusLogger.java:71 - SecondaryIndexExecutor               0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,342 StatusLogger.java:71 - MutationStage                        1         0      456382202         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,342 StatusLogger.java:71 - MemtableReclaimMemory                0         0            661         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,342 StatusLogger.java:71 - PendingRangeCalculator               0         0             14         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,342 StatusLogger.java:71 - GossipStage                          0         0         207510         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,342 StatusLogger.java:71 - SecondaryIndexManagement             0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,342 StatusLogger.java:71 - HintsDispatcher                      0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - Native-Transport-Requests            2         0      316357554         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - RequestResponseStage                 1         0      540249723         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - MigrationStage                       0         0             13         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - StatusPropagationExecutor            0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - MemtableFlushWriter                  1         0            661         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - MemtablePostFlush                    1         0            786         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - PerDiskMemtableFlushWriter_0         1         0            657         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - Sampler                              0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - ValidationExecutor                   0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - ViewBuildExecutor                    0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - InternalResponseStage                0         0          10891         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:71 - CacheCleanupExecutor                 0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:03:53,343 StatusLogger.java:81 - CompactionManager                 2        10
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:93 - MessagingService                n/a       0/1
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:103 - Cache Type                     Size                 Capacity               KeysToSave
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:105 - KeyCache                          0                104857600                      all
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:111 - RowCache                          0                        0                      all
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:118 - Table                       Memtable ops,data
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_traces.sessions                    0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_traces.events                      0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_distributed.parent_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_distributed.repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_distributed.partition_denylist                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_distributed.view_build_status                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_auth.roles                         0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_auth.identity_to_role                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_auth.role_members                  0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_auth.cidr_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_auth.resource_role_permissons_index                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_auth.network_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_auth.cidr_groups                   0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - system_auth.role_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,344 StatusLogger.java:121 - ycsb.usertable                 50724,91644335
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system_schema.columns                     0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system_schema.column_masks                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system_schema.types                       0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system_schema.indexes                     0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system_schema.keyspaces                   0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system_schema.dropped_columns                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system_schema.aggregates                  0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system_schema.triggers                    0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system_schema.tables                      0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system_schema.views                       0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system_schema.functions                   0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system.compaction_history             25,8392
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system.IndexInfo                          0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system.repairs                            0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system.size_estimates              1785,31330
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system.table_estimates             3570,67428
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system.paxos                              0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system.sstable_activity_v2            136,1088
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system.paxos_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system.built_views                        0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,345 StatusLogger.java:121 - system.peer_events                        0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.peers_v2                           0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.peers                              0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.peer_events_v2                     0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.batches                            0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.transferred_ranges                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.transferred_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.view_builds_in_progress                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.local                              0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.sstable_activity              136,1088
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.top_partitions                     0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.available_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.available_ranges                   0,0
+INFO  [Notification Thread] 2025-03-29 00:03:53,346 StatusLogger.java:121 - system.prepared_statements                 0,0
+INFO  [PerDiskMemtableFlushWriter_0:536] 2025-03-29 00:04:01,791 Flushing.java:179 - Completed flushing /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3606-bti-Data.db (1.350GiB) for commitlog position CommitLogPosition(segmentId=1743161500160, position=26228875)
+WARN  [Notification Thread] 2025-03-29 00:04:01,795 GCInspector.java:283 - ZGC Cycles GC in 1121ms.  ZHeap: 12102664192 -> 4326424576
+INFO  [Notification Thread] 2025-03-29 00:04:01,795 StatusLogger.java:67 - Pool Name                       Active   Pending      Completed   Blocked  All Time Blocked
+INFO  [Notification Thread] 2025-03-29 00:04:01,795 StatusLogger.java:71 - ReadStage                            4         0      285184543         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,795 StatusLogger.java:71 - Native-Transport-Auth-Requests         0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,795 StatusLogger.java:71 - CompactionExecutor                   2        48          25869         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,795 StatusLogger.java:71 - SecondaryIndexExecutor               0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,795 StatusLogger.java:71 - MutationStage                        0         0      456457351         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - MemtableReclaimMemory                0         0            661         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - PendingRangeCalculator               0         0             14         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - GossipStage                          0         0         207557         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - SecondaryIndexManagement             0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - HintsDispatcher                      0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - Native-Transport-Requests            3         0      316409986         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - RequestResponseStage                 0         0      540337679         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - MigrationStage                       0         0             13         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - StatusPropagationExecutor            0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - MemtableFlushWriter                  1         0            661         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - MemtablePostFlush                    1         0            786         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - PerDiskMemtableFlushWriter_0         0         0            658         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - Sampler                              0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - ValidationExecutor                   0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - ViewBuildExecutor                    0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - InternalResponseStage                0         0          10891         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,796 StatusLogger.java:71 - CacheCleanupExecutor                 0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:81 - CompactionManager                 2        10
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:93 - MessagingService                n/a       0/0
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:103 - Cache Type                     Size                 Capacity               KeysToSave
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:105 - KeyCache                          0                104857600                      all
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:111 - RowCache                          0                        0                      all
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:118 - Table                       Memtable ops,data
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:121 - system_traces.sessions                    0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:121 - system_traces.events                      0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:121 - system_distributed.parent_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:121 - system_distributed.repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:121 - system_distributed.partition_denylist                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:121 - system_distributed.view_build_status                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:121 - system_auth.roles                         0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,797 StatusLogger.java:121 - system_auth.identity_to_role                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_auth.role_members                  0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_auth.cidr_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_auth.resource_role_permissons_index                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_auth.network_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_auth.cidr_groups                   0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_auth.role_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - ycsb.usertable               129068,233099219
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_schema.columns                     0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_schema.column_masks                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_schema.types                       0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_schema.indexes                     0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_schema.keyspaces                   0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_schema.dropped_columns                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_schema.aggregates                  0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_schema.triggers                    0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_schema.tables                      0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_schema.views                       0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system_schema.functions                   0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system.compaction_history             25,8392
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system.IndexInfo                          0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,798 StatusLogger.java:121 - system.repairs                            0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.size_estimates              1785,31330
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.table_estimates             3570,67428
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.paxos                              0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.sstable_activity_v2            136,1088
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.paxos_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.built_views                        0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.peer_events                        0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.peers_v2                           0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.peers                              0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.peer_events_v2                     0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.batches                            0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.transferred_ranges                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.transferred_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.view_builds_in_progress                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.local                              0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.sstable_activity              136,1088
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.top_partitions                     0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.available_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.available_ranges                   0,0
+INFO  [Notification Thread] 2025-03-29 00:04:01,799 StatusLogger.java:121 - system.prepared_statements                 0,0
+INFO  [Notification Thread] 2025-03-29 00:04:40,116 GCInspector.java:285 - ZGC Cycles GC in 443ms.  ZHeap: 27332182016 -> 2000683008
+INFO  [Notification Thread] 2025-03-29 00:05:15,026 GCInspector.java:285 - ZGC Cycles GC in 652ms.  ZHeap: 23569891328 -> 3097493504
+INFO  [SlabPoolCleaner] 2025-03-29 00:05:21,353 AbstractAllocatorMemtable.java:293 - Flushing largest CFS(Keyspace='ycsb', ColumnFamily='usertable') to free up room. Used total: 0.33/0.00, live: 0.33/0.00, flushing: 0.00/0.00, this: 0.33/0.00
+INFO  [SlabPoolCleaner] 2025-03-29 00:05:21,354 ColumnFamilyStore.java:1052 - Enqueuing flush of ycsb.usertable, Reason: MEMTABLE_LIMIT, Usage: 2.485GiB (33%) on-heap, 0B (0%) off-heap
+INFO  [PerDiskMemtableFlushWriter_0:537] 2025-03-29 00:05:21,874 Flushing.java:153 - Writing Memtable-usertable@612780279(1.457GiB serialized bytes, 866037 ops, 2.485GiB (33%) on-heap, 0B (0%) off-heap), flushed range = [min(-9223372036854775808), max(9223372036854775807))
+INFO  [PerDiskMemtableFlushWriter_0:537] 2025-03-29 00:05:35,572 Flushing.java:179 - Completed flushing /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3612-bti-Data.db (1.350GiB) for commitlog position CommitLogPosition(segmentId=1743161500206, position=10640720)
+INFO  [Notification Thread] 2025-03-29 00:05:57,164 GCInspector.java:285 - ZGC Cycles GC in 790ms.  ZHeap: 30398218240 -> 1660944384
+INFO  [Notification Thread] 2025-03-29 00:06:01,263 GCInspector.java:285 - ZGC Cycles GC in 689ms.  ZHeap: 3833593856 -> 2055208960
+INFO  [Notification Thread] 2025-03-29 00:06:33,751 GCInspector.java:285 - ZGC Cycles GC in 477ms.  ZHeap: 21843935232 -> 2585788416
+INFO  [CompactionExecutor:5] 2025-03-29 00:06:44,144 CompactionTask.java:258 - Compacted (aaf65800-0c30-11f0-9d78-09f9665dc9f7) 6 sstables to [./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3592-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3594-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3604-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3610-bti,] to level=0.  15.363GiB to 15.139GiB (~98% of original) in 442,670ms.  Read Throughput = 35.538MiB/s, Write Throughput = 35.021MiB/s, Row Throughput = ~40,986/s.  9,767,664 total partitions merged to 9,457,302.  Partition merge counts were {1:9152440, 2:299415, 3:5394, 4:53, }. Time spent writing keys = 442,353ms
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:44,145 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3259-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:44,151 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3399-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:44,329 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3029-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:44,335 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3030-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:44,342 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3583-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:44,434 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-2727-bti
+INFO  [CompactionExecutor:4] 2025-03-29 00:06:51,563 CompactionTask.java:258 - Compacted (c95f12a0-0c30-11f0-9d78-09f9665dc9f7) 6 sstables to [./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3593-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3599-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3605-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3611-bti,] to level=0.  12.648GiB to 12.468GiB (~98% of original) in 399,071ms.  Read Throughput = 32.453MiB/s, Write Throughput = 31.993MiB/s, Row Throughput = ~37,403/s.  8,040,963 total partitions merged to 7,792,320.  Partition merge counts were {1:7547505, 2:241023, 3:3756, 4:36, }. Time spent writing keys = 398,677ms
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:51,564 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-2809-bti
+INFO  [CompactionExecutor:5] 2025-03-29 00:06:51,565 CompactionTask.java:167 - Compacting (b73ceec0-0c31-11f0-9d78-09f9665dc9f7) [/data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3589-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3574-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3607-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3601-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3613-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3582-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3596-bti-Data.db:level=0, ]
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:51,568 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3023-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:51,575 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3017-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:51,580 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3253-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:51,586 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3392-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:06:51,775 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3580-bti
+INFO  [SlabPoolCleaner] 2025-03-29 00:06:54,987 AbstractAllocatorMemtable.java:293 - Flushing largest CFS(Keyspace='ycsb', ColumnFamily='usertable') to free up room. Used total: 0.33/0.00, live: 0.33/0.00, flushing: 0.00/0.00, this: 0.33/0.00
+INFO  [SlabPoolCleaner] 2025-03-29 00:06:54,988 ColumnFamilyStore.java:1052 - Enqueuing flush of ycsb.usertable, Reason: MEMTABLE_LIMIT, Usage: 2.485GiB (33%) on-heap, 0B (0%) off-heap
+INFO  [PerDiskMemtableFlushWriter_0:538] 2025-03-29 00:06:55,516 Flushing.java:153 - Writing Memtable-usertable@1926175216(1.457GiB serialized bytes, 866742 ops, 2.485GiB (33%) on-heap, 0B (0%) off-heap), flushed range = [min(-9223372036854775808), max(9223372036854775807))
+INFO  [Notification Thread] 2025-03-29 00:07:08,572 GCInspector.java:285 - ZGC Cycles GC in 598ms.  ZHeap: 25237127168 -> 3745513472
+INFO  [PerDiskMemtableFlushWriter_0:538] 2025-03-29 00:07:08,979 Flushing.java:179 - Completed flushing /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3617-bti-Data.db (1.350GiB) for commitlog position CommitLogPosition(segmentId=1743161500251, position=28586908)
+INFO  [CompactionExecutor:4] 2025-03-29 00:07:09,973 CompactionTask.java:167 - Compacting (c235c540-0c31-11f0-9d78-09f9665dc9f7) [/data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3591-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3585-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3620-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3603-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3598-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3615-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3609-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3577-bti-Data.db:level=0, ]
+INFO  [CompactionExecutor:5] 2025-03-29 00:07:48,881 CompactionTask.java:258 - Compacted (b73ceec0-0c31-11f0-9d78-09f9665dc9f7) 7 sstables to [./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3616-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3622-bti,] to level=0.  2.368GiB to 2.368GiB (~100% of original) in 57,314ms.  Read Throughput = 42.306MiB/s, Write Throughput = 42.309MiB/s, Row Throughput = ~50,089/s.  1,515,277 total partitions merged to 1,513,090.  Partition merge counts were {1:1510904, 2:2185, 3:1, }. Time spent writing keys = 57,235ms
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:07:48,881 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3589-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:07:48,884 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3574-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:07:48,887 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3607-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:07:48,890 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3601-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:07:48,893 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3613-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:07:48,898 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3582-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:07:48,902 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3596-bti
+WARN  [Notification Thread] 2025-03-29 00:07:50,355 GCInspector.java:283 - ZGC Cycles GC in 3581ms.  ZHeap: 27795652608 -> 3915382784
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:67 - Pool Name                       Active   Pending      Completed   Blocked  All Time Blocked
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - ReadStage                            1         0      286536610         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - Native-Transport-Auth-Requests         0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - CompactionExecutor                   1         0          25968         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - SecondaryIndexExecutor               0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - MutationStage                        0         0      458487112         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - MemtableReclaimMemory                0         0            664         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - PendingRangeCalculator               0         0             14         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - GossipStage                          0         0         208575         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - SecondaryIndexManagement             0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - HintsDispatcher                      0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - Native-Transport-Requests            3         0      317835723         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - RequestResponseStage                 0         0      542726866         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - MigrationStage                       0         0             13         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - StatusPropagationExecutor            0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,356 StatusLogger.java:71 - MemtableFlushWriter                  0         0            664         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:71 - MemtablePostFlush                    0         0            789         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:71 - PerDiskMemtableFlushWriter_0         0         0            660         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:71 - Sampler                              0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:71 - ValidationExecutor                   0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:71 - ViewBuildExecutor                    0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:71 - InternalResponseStage                0         0          10891         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:71 - CacheCleanupExecutor                 0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:81 - CompactionManager                 1        13
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:93 - MessagingService                n/a       0/0
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:103 - Cache Type                     Size                 Capacity               KeysToSave
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:105 - KeyCache                          0                104857600                      all
+INFO  [Notification Thread] 2025-03-29 00:07:50,357 StatusLogger.java:111 - RowCache                          0                        0                      all
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:118 - Table                       Memtable ops,data
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_traces.sessions                    0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_traces.events                      0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_distributed.parent_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_distributed.repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_distributed.partition_denylist                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_distributed.view_build_status                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_auth.roles                         0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_auth.identity_to_role                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_auth.role_members                  0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_auth.cidr_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_auth.resource_role_permissons_index                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_auth.network_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_auth.cidr_groups                   0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - system_auth.role_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,358 StatusLogger.java:121 - ycsb.usertable               510554,922587491
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system_schema.columns                     0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system_schema.column_masks                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system_schema.types                       0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system_schema.indexes                     0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system_schema.keyspaces                   0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system_schema.dropped_columns                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system_schema.aggregates                  0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system_schema.triggers                    0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system_schema.tables                      0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system_schema.views                       0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system_schema.functions                   0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system.compaction_history             28,9485
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system.IndexInfo                          0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system.repairs                            0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system.size_estimates              2040,31330
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system.table_estimates             4080,67428
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system.paxos                              0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,359 StatusLogger.java:121 - system.sstable_activity_v2            155,1240
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.paxos_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.built_views                        0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.peer_events                        0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.peers_v2                           0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.peers                              0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.peer_events_v2                     0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.batches                            0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.transferred_ranges                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.transferred_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.view_builds_in_progress                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.local                              0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.sstable_activity              155,1240
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.top_partitions                     0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.available_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.available_ranges                   0,0
+INFO  [Notification Thread] 2025-03-29 00:07:50,360 StatusLogger.java:121 - system.prepared_statements                 0,0
+INFO  [Notification Thread] 2025-03-29 00:07:51,628 GCInspector.java:285 - ZGC Cycles GC in 955ms.  ZHeap: 4294967296 -> 2659188736
+INFO  [CompactionExecutor:5] 2025-03-29 00:08:12,492 CompactionTask.java:167 - Compacting (e77969b0-0c31-11f0-9d78-09f9665dc9f7) [/data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3573-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3606-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3617-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3588-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3581-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3600-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3595-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3612-bti-Data.db:level=0, ]
+INFO  [CompactionExecutor:4] 2025-03-29 00:08:13,389 CompactionTask.java:258 - Compacted (c235c540-0c31-11f0-9d78-09f9665dc9f7) 8 sstables to [./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3621-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3623-bti,] to level=0.  2.709GiB to 2.709GiB (~99% of original) in 63,415ms.  Read Throughput = 43.750MiB/s, Write Throughput = 43.747MiB/s, Row Throughput = ~51,902/s.  1,733,366 total partitions merged to 1,730,311.  Partition merge counts were {1:1727259, 2:3049, 3:3, }. Time spent writing keys = 62,403ms
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:08:13,389 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3591-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:08:13,392 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3585-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:08:13,395 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3620-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:08:13,400 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3603-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:08:13,403 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3598-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:08:13,407 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3615-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:08:13,412 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3609-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:08:13,416 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3577-bti
+INFO  [Notification Thread] 2025-03-29 00:08:23,312 GCInspector.java:285 - ZGC Cycles GC in 537ms.  ZHeap: 21963472896 -> 3120562176
+INFO  [SlabPoolCleaner] 2025-03-29 00:08:28,640 AbstractAllocatorMemtable.java:293 - Flushing largest CFS(Keyspace='ycsb', ColumnFamily='usertable') to free up room. Used total: 0.33/0.00, live: 0.33/0.00, flushing: 0.00/0.00, this: 0.33/0.00
+INFO  [SlabPoolCleaner] 2025-03-29 00:08:28,641 ColumnFamilyStore.java:1052 - Enqueuing flush of ycsb.usertable, Reason: MEMTABLE_LIMIT, Usage: 2.485GiB (33%) on-heap, 0B (0%) off-heap
+INFO  [PerDiskMemtableFlushWriter_0:539] 2025-03-29 00:08:29,159 Flushing.java:153 - Writing Memtable-usertable@1947720114(1.457GiB serialized bytes, 865841 ops, 2.485GiB (33%) on-heap, 0B (0%) off-heap), flushed range = [min(-9223372036854775808), max(9223372036854775807))
+INFO  [PerDiskMemtableFlushWriter_0:539] 2025-03-29 00:08:41,598 Flushing.java:179 - Completed flushing /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3625-bti-Data.db (1.350GiB) for commitlog position CommitLogPosition(segmentId=1743161500297, position=13002529)
+INFO  [CompactionExecutor:4] 2025-03-29 00:08:42,612 CompactionTask.java:167 - Compacting (f96d5c30-0c31-11f0-9d78-09f9665dc9f7) [/data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3590-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3608-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3602-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3619-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3614-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3597-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3584-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3628-bti-Data.db:level=0, ]
+INFO  [Notification Thread] 2025-03-29 00:08:56,233 GCInspector.java:285 - ZGC Cycles GC in 259ms.  ZHeap: 24981274624 -> 1170210816
+INFO  [CompactionExecutor:5] 2025-03-29 00:09:09,531 CompactionTask.java:258 - Compacted (e77969b0-0c31-11f0-9d78-09f9665dc9f7) 8 sstables to [./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3624-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3627-bti,] to level=0.  2.706GiB to 2.705GiB (~99% of original) in 57,037ms.  Read Throughput = 48.574MiB/s, Write Throughput = 48.571MiB/s, Row Throughput = ~57,240/s.  1,732,069 total partitions merged to 1,729,119.  Partition merge counts were {1:1726172, 2:2944, 3:3, }. Time spent writing keys = 56,161ms
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:09,531 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3573-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:09,533 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3606-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:09,536 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3617-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:09,539 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3588-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:09,541 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3581-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:09,543 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3600-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:09,546 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3595-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:09,549 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3612-bti
+INFO  [Notification Thread] 2025-03-29 00:09:33,698 GCInspector.java:285 - ZGC Cycles GC in 524ms.  ZHeap: 24297603072 -> 2449473536
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:39,968 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3590-bti
+INFO  [CompactionExecutor:4] 2025-03-29 00:09:39,968 CompactionTask.java:258 - Compacted (f96d5c30-0c31-11f0-9d78-09f9665dc9f7) 8 sstables to [./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3630-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3631-bti,] to level=0.  2.708GiB to 2.708GiB (~99% of original) in 57,354ms.  Read Throughput = 48.344MiB/s, Write Throughput = 48.342MiB/s, Row Throughput = ~57,249/s.  1,732,392 total partitions merged to 1,729,350.  Partition merge counts were {1:1726313, 2:3032, 3:5, }. Time spent writing keys = 56,343ms
+INFO  [CompactionExecutor:5] 2025-03-29 00:09:39,970 CompactionTask.java:167 - Compacting (1b9da620-0c32-11f0-9d78-09f9665dc9f7) [/data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3622-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3570-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3494-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3529-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3454-bti-Data.db:level=0, ]
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:39,972 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3608-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:39,975 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3602-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:39,980 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3619-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:39,985 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3614-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:39,989 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3597-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:39,993 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3584-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:09:39,997 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3628-bti
+INFO  [SlabPoolCleaner] 2025-03-29 00:10:02,289 AbstractAllocatorMemtable.java:293 - Flushing largest CFS(Keyspace='ycsb', ColumnFamily='usertable') to free up room. Used total: 0.33/0.00, live: 0.33/0.00, flushing: 0.00/0.00, this: 0.33/0.00
+INFO  [SlabPoolCleaner] 2025-03-29 00:10:02,289 ColumnFamilyStore.java:1052 - Enqueuing flush of ycsb.usertable, Reason: MEMTABLE_LIMIT, Usage: 2.485GiB (33%) on-heap, 0B (0%) off-heap
+INFO  [PerDiskMemtableFlushWriter_0:540] 2025-03-29 00:10:02,840 Flushing.java:153 - Writing Memtable-usertable@1417181708(1.457GiB serialized bytes, 866797 ops, 2.485GiB (33%) on-heap, 0B (0%) off-heap), flushed range = [min(-9223372036854775808), max(9223372036854775807))
+INFO  [CompactionExecutor:4] 2025-03-29 00:10:12,493 CompactionTask.java:167 - Compacting (2efff5b0-0c32-11f0-9d78-09f9665dc9f7) [/data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3624-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3571-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3535-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3503-bti-Data.db:level=0, ]
+WARN  [Notification Thread] 2025-03-29 00:10:14,552 GCInspector.java:283 - ZGC Cycles GC in 4278ms.  ZHeap: 25830621184 -> 6620708864
+INFO  [Notification Thread] 2025-03-29 00:10:14,552 StatusLogger.java:67 - Pool Name                       Active   Pending      Completed   Blocked  All Time Blocked
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - ReadStage                            2         0      287392048         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - Native-Transport-Auth-Requests         0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - CompactionExecutor                   2        34          26081         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - SecondaryIndexExecutor               0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - MutationStage                        0         1      459769385         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - MemtableReclaimMemory                0         0            665         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - PendingRangeCalculator               0         0             14         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - GossipStage                          0         0         209215         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - SecondaryIndexManagement             0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - HintsDispatcher                      0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - Native-Transport-Requests            4         0      318738543         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - RequestResponseStage                 0         1      544239327         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - MigrationStage                       0         0             13         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,553 StatusLogger.java:71 - StatusPropagationExecutor            0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,554 StatusLogger.java:71 - MemtableFlushWriter                  1         0            665         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,554 StatusLogger.java:71 - MemtablePostFlush                    1         0            790         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,554 StatusLogger.java:71 - PerDiskMemtableFlushWriter_0         1         0            661         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,554 StatusLogger.java:71 - Sampler                              0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,554 StatusLogger.java:71 - ValidationExecutor                   0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,554 StatusLogger.java:71 - ViewBuildExecutor                    0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,554 StatusLogger.java:71 - InternalResponseStage                0         0          10891         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,554 StatusLogger.java:71 - CacheCleanupExecutor                 0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:10:14,554 StatusLogger.java:81 - CompactionManager                 2        10
+INFO  [Notification Thread] 2025-03-29 00:10:14,554 StatusLogger.java:93 - MessagingService                n/a      0/11
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:103 - Cache Type                     Size                 Capacity               KeysToSave
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:105 - KeyCache                          0                104857600                      all
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:111 - RowCache                          0                        0                      all
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:118 - Table                       Memtable ops,data
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:121 - system_traces.sessions                    0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:121 - system_traces.events                      0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:121 - system_distributed.parent_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:121 - system_distributed.repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:121 - system_distributed.partition_denylist                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:121 - system_distributed.view_build_status                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:121 - system_auth.roles                         0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:121 - system_auth.identity_to_role                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:121 - system_auth.role_members                  0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,555 StatusLogger.java:121 - system_auth.cidr_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_auth.resource_role_permissons_index                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_auth.network_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_auth.cidr_groups                   0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_auth.role_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - ycsb.usertable               113342,204186349
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_schema.columns                     0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_schema.column_masks                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_schema.types                       0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_schema.indexes                     0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_schema.keyspaces                   0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_schema.dropped_columns                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_schema.aggregates                  0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_schema.triggers                    0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_schema.tables                      0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_schema.views                       0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system_schema.functions                   0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system.compaction_history            31,10514
+INFO  [Notification Thread] 2025-03-29 00:10:14,556 StatusLogger.java:121 - system.IndexInfo                          0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.repairs                            0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.size_estimates              2040,31330
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.table_estimates             4080,67428
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.paxos                              0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.sstable_activity_v2            179,1432
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.paxos_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.built_views                        0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.peer_events                        0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.peers_v2                           0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.peers                              0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.peer_events_v2                     0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.batches                            0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.transferred_ranges                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.transferred_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.view_builds_in_progress                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.local                              0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.sstable_activity              179,1432
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.top_partitions                     0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.available_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.available_ranges                   0,0
+INFO  [Notification Thread] 2025-03-29 00:10:14,557 StatusLogger.java:121 - system.prepared_statements                 0,0
+INFO  [PerDiskMemtableFlushWriter_0:540] 2025-03-29 00:10:14,607 Flushing.java:179 - Completed flushing /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3633-bti-Data.db (1.350GiB) for commitlog position CommitLogPosition(segmentId=1743161500342, position=30849077)
+INFO  [Notification Thread] 2025-03-29 00:10:20,892 GCInspector.java:285 - ZGC Cycles GC in 418ms.  ZHeap: 10187964416 -> 1149239296
+INFO  [Notification Thread] 2025-03-29 00:11:00,859 GCInspector.java:285 - ZGC Cycles GC in 484ms.  ZHeap: 25339887616 -> 2399141888
+INFO  [SlabPoolCleaner] 2025-03-29 00:11:35,458 AbstractAllocatorMemtable.java:293 - Flushing largest CFS(Keyspace='ycsb', ColumnFamily='usertable') to free up room. Used total: 0.33/0.00, live: 0.33/0.00, flushing: 0.00/0.00, this: 0.33/0.00
+INFO  [SlabPoolCleaner] 2025-03-29 00:11:35,458 ColumnFamilyStore.java:1052 - Enqueuing flush of ycsb.usertable, Reason: MEMTABLE_LIMIT, Usage: 2.485GiB (33%) on-heap, 0B (0%) off-heap
+INFO  [PerDiskMemtableFlushWriter_0:541] 2025-03-29 00:11:35,987 Flushing.java:153 - Writing Memtable-usertable@1129709550(1.457GiB serialized bytes, 866712 ops, 2.485GiB (33%) on-heap, 0B (0%) off-heap), flushed range = [min(-9223372036854775808), max(9223372036854775807))
+WARN  [Notification Thread] 2025-03-29 00:11:43,062 GCInspector.java:283 - ZGC Cycles GC in 1689ms.  ZHeap: 28424798208 -> 4179623936
+INFO  [Notification Thread] 2025-03-29 00:11:43,063 StatusLogger.java:67 - Pool Name                       Active   Pending      Completed   Blocked  All Time Blocked
+INFO  [Notification Thread] 2025-03-29 00:11:43,063 StatusLogger.java:71 - ReadStage                            3         0      287917159         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,063 StatusLogger.java:71 - Native-Transport-Auth-Requests         0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,063 StatusLogger.java:71 - CompactionExecutor                   2        48          26081         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,063 StatusLogger.java:71 - SecondaryIndexExecutor               0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,063 StatusLogger.java:71 - MutationStage                        0         0      460559336         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,063 StatusLogger.java:71 - MemtableReclaimMemory                0         0            666         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,063 StatusLogger.java:71 - PendingRangeCalculator               0         0             14         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,063 StatusLogger.java:71 - GossipStage                          0         0         209600         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,063 StatusLogger.java:71 - SecondaryIndexManagement             0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,063 StatusLogger.java:71 - HintsDispatcher                      0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - Native-Transport-Requests            4         0      319292422         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - RequestResponseStage                 0         0      545167873         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - MigrationStage                       0         0             13         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - StatusPropagationExecutor            0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - MemtableFlushWriter                  1         0            666         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - MemtablePostFlush                    1         0            791         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - PerDiskMemtableFlushWriter_0         1         0            662         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - Sampler                              0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - ValidationExecutor                   0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - ViewBuildExecutor                    0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - InternalResponseStage                0         0          10891         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,064 StatusLogger.java:71 - CacheCleanupExecutor                 0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:81 - CompactionManager                 2        10
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:93 - MessagingService                n/a       0/0
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:103 - Cache Type                     Size                 Capacity               KeysToSave
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:105 - KeyCache                          0                104857600                      all
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:111 - RowCache                          0                        0                      all
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:118 - Table                       Memtable ops,data
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:121 - system_traces.sessions                    0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:121 - system_traces.events                      0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:121 - system_distributed.parent_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:121 - system_distributed.repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:121 - system_distributed.partition_denylist                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,065 StatusLogger.java:121 - system_distributed.view_build_status                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_auth.roles                         0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_auth.identity_to_role                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_auth.role_members                  0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_auth.cidr_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_auth.resource_role_permissons_index                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_auth.network_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_auth.cidr_groups                   0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_auth.role_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - ycsb.usertable                69594,126040244
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_schema.columns                     0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_schema.column_masks                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_schema.types                       0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_schema.indexes                     0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_schema.keyspaces                   0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,066 StatusLogger.java:121 - system_schema.dropped_columns                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system_schema.aggregates                  0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system_schema.triggers                    0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system_schema.tables                      0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system_schema.views                       0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system_schema.functions                   0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.compaction_history            31,10514
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.IndexInfo                          0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.repairs                            0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.size_estimates              2040,31330
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.table_estimates             4080,67428
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.paxos                              0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.sstable_activity_v2            179,1432
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.paxos_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.built_views                        0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.peer_events                        0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.peers_v2                           0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.peers                              0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,067 StatusLogger.java:121 - system.peer_events_v2                     0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,068 StatusLogger.java:121 - system.batches                            0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,068 StatusLogger.java:121 - system.transferred_ranges                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,068 StatusLogger.java:121 - system.transferred_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,068 StatusLogger.java:121 - system.view_builds_in_progress                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,068 StatusLogger.java:121 - system.local                              0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,068 StatusLogger.java:121 - system.sstable_activity              179,1432
+INFO  [Notification Thread] 2025-03-29 00:11:43,068 StatusLogger.java:121 - system.top_partitions                     0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,068 StatusLogger.java:121 - system.available_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,068 StatusLogger.java:121 - system.available_ranges                   0,0
+INFO  [Notification Thread] 2025-03-29 00:11:43,068 StatusLogger.java:121 - system.prepared_statements                 0,0
+INFO  [CompactionExecutor:5] 2025-03-29 00:11:48,729 CompactionTask.java:258 - Compacted (1b9da620-0c32-11f0-9d78-09f9665dc9f7) 5 sstables to [./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3632-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3638-bti,] to level=0.  5.075GiB to 5.062GiB (~99% of original) in 128,757ms.  Read Throughput = 40.365MiB/s, Write Throughput = 40.256MiB/s, Row Throughput = ~47,997/s.  3,244,750 total partitions merged to 3,225,179.  Partition merge counts were {1:3205677, 2:19433, 3:69, }. Time spent writing keys = 128,397ms
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:11:48,729 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3622-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:11:48,734 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3529-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:11:48,738 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3570-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:11:48,743 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3494-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:11:48,747 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3454-bti
+INFO  [PerDiskMemtableFlushWriter_0:541] 2025-03-29 00:11:48,994 Flushing.java:179 - Completed flushing /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3640-bti-Data.db (1.350GiB) for commitlog position CommitLogPosition(segmentId=1743161500388, position=15140548)
+INFO  [CompactionExecutor:5] 2025-03-29 00:11:50,655 CompactionTask.java:167 - Compacting (69824ad0-0c32-11f0-9d78-09f9665dc9f7) [/data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3634-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3618-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3626-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3641-bti-Data.db:level=0, ]
+WARN  [Notification Thread] 2025-03-29 00:11:51,893 GCInspector.java:283 - ZGC Cycles GC in 1118ms.  ZHeap: 9567207424 -> 4276092928
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:67 - Pool Name                       Active   Pending      Completed   Blocked  All Time Blocked
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - ReadStage                            1         0      287969391         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - Native-Transport-Auth-Requests         0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - CompactionExecutor                   2         0          26130         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - SecondaryIndexExecutor               0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - MutationStage                        0         0      460637050         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - MemtableReclaimMemory                0         0            667         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - PendingRangeCalculator               0         0             14         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - GossipStage                          0         0         209641         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - SecondaryIndexManagement             0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - HintsDispatcher                      0         0              1         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - Native-Transport-Requests            2         0      319346521         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - RequestResponseStage                 0         0      545258327         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,894 StatusLogger.java:71 - MigrationStage                       0         0             13         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:71 - StatusPropagationExecutor            0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:71 - MemtableFlushWriter                  0         0            667         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:71 - MemtablePostFlush                    0         0            792         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:71 - PerDiskMemtableFlushWriter_0         0         0            663         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:71 - Sampler                              0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:71 - ValidationExecutor                   0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:71 - ViewBuildExecutor                    0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:71 - InternalResponseStage                0         0          10891         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:71 - CacheCleanupExecutor                 0         0              0         0                 0
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:81 - CompactionManager                 2        12
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:93 - MessagingService                n/a       0/0
+INFO  [Notification Thread] 2025-03-29 00:11:51,895 StatusLogger.java:103 - Cache Type                     Size                 Capacity               KeysToSave
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:105 - KeyCache                          0                104857600                      all
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:111 - RowCache                          0                        0                      all
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:118 - Table                       Memtable ops,data
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_traces.sessions                    0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_traces.events                      0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_distributed.parent_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_distributed.repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_distributed.partition_denylist                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_distributed.view_build_status                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_auth.roles                         0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_auth.identity_to_role                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_auth.role_members                  0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_auth.cidr_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_auth.resource_role_permissons_index                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_auth.network_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_auth.cidr_groups                   0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_auth.role_permissions                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - ycsb.usertable               150523,272349208
+INFO  [Notification Thread] 2025-03-29 00:11:51,896 StatusLogger.java:121 - system_schema.columns                     0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system_schema.column_masks                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system_schema.types                       0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system_schema.indexes                     0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system_schema.keyspaces                   0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system_schema.dropped_columns                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system_schema.aggregates                  0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system_schema.triggers                    0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system_schema.tables                      0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system_schema.views                       0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system_schema.functions                   0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system.compaction_history            32,10857
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system.IndexInfo                          0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system.repairs                            0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system.size_estimates              2295,31330
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system.table_estimates             4590,67428
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system.paxos                              0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system.sstable_activity_v2            184,1472
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system.paxos_repair_history                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system.built_views                        0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system.peer_events                        0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,897 StatusLogger.java:121 - system.peers_v2                           0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.peers                              0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.peer_events_v2                     0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.batches                            0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.transferred_ranges                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.transferred_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.view_builds_in_progress                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.local                              0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.sstable_activity              184,1472
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.top_partitions                     0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.available_ranges_v2                 0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.available_ranges                   0,0
+INFO  [Notification Thread] 2025-03-29 00:11:51,898 StatusLogger.java:121 - system.prepared_statements                 0,0
+INFO  [CompactionExecutor:4] 2025-03-29 00:12:15,192 CompactionTask.java:258 - Compacted (2efff5b0-0c32-11f0-9d78-09f9665dc9f7) 4 sstables to [./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3637-bti,./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3639-bti,] to level=0.  3.891GiB to 3.884GiB (~99% of original) in 122,698ms.  Read Throughput = 32.472MiB/s, Write Throughput = 32.412MiB/s, Row Throughput = ~38,658/s.  2,487,053 total partitions merged to 2,476,413.  Partition merge counts were {1:2465792, 2:10602, 3:19, }. Time spent writing keys = 122,168ms
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:12:15,193 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3624-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:12:15,198 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3535-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:12:15,201 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3503-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:12:15,204 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/bin/./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3571-bti
+INFO  [CompactionExecutor:5] 2025-03-29 00:12:24,057 CompactionTask.java:258 - Compacted (69824ad0-0c32-11f0-9d78-09f9665dc9f7) 4 sstables to [./../data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3644-bti,] to level=0.  1.354GiB to 1.354GiB (~100% of original) in 33,402ms.  Read Throughput = 41.504MiB/s, Write Throughput = 41.513MiB/s, Row Throughput = ~48,872/s.  866,132 total partitions merged to 865,504.  Partition merge counts were {1:864877, 2:626, 3:1, }. Time spent writing keys = 33,317ms
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:12:24,058 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3634-bti
+INFO  [CompactionExecutor:4] 2025-03-29 00:12:24,059 CompactionTask.java:167 - Compacting (7d6ba4b0-0c32-11f0-9d78-09f9665dc9f7) [/data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3569-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3528-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3616-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3644-bti-Data.db:level=0, ]
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:12:24,061 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3618-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:12:24,064 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3626-bti
+INFO  [NonPeriodicTasks:1] 2025-03-29 00:12:24,068 BtiFormat.java:216 - Deleting sstable: /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3641-bti
+INFO  [Notification Thread] 2025-03-29 00:12:31,943 GCInspector.java:285 - ZGC Cycles GC in 470ms.  ZHeap: 28840034304 -> 2143289344
+INFO  [Notification Thread] 2025-03-29 00:13:07,001 GCInspector.java:285 - ZGC Cycles GC in 627ms.  ZHeap: 20919091200 -> 2826960896
+INFO  [CompactionExecutor:5] 2025-03-29 00:13:12,493 CompactionTask.java:167 - Compacting (9a49eec0-0c32-11f0-9d78-09f9665dc9f7) [/data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3507-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3572-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3536-bti-Data.db:level=0, /data/apache-cassandra-5.0.3/data/data/ycsb/usertable-c679abc00bc911f09d7809f9665dc9f7/da-3627-bti-Data.db:level=0, ]

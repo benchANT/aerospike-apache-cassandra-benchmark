@@ -1,0 +1,20 @@
+{
+    "load": {
+        "insertComplete": true,
+        "Exceptions": {
+            "total": 196,
+            "\tat com.datastax.oss.driver.api.core.DriverTimeoutException": 98,
+            "com.datastax.oss.driver.api.core.DriverTimeoutException": 98
+        },
+        "insertRetryError": 0,
+        "INSERT-FAILED": 98
+    },
+    "run": {
+        "executionTimeReached": false,
+        "Exceptions": {
+            "total": 0
+        },
+        "insertRetryError": 0,
+        "READ-FAILED": 101094002
+    }
+}

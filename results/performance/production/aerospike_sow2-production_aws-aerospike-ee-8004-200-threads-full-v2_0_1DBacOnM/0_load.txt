@@ -1,0 +1,87 @@
+bin/ycsb load aerospike7 -s -jvm-args=-XX:MaxRAMPercentage=85.0  -p as.host=172.31.22.136 -p as.namespace=benchantdb -p as.connpoolspernode=1 -p as.connspernode=2400 -p as.usecompression=false -p workload=site.ycsb.workloads.CoreWorkload -threads 200 -p recordcount=50000000 -p operationcount=5800000000 -p fieldcount=10 -p fieldlength=200 -p requestdistribution=uniform-growing -p insertorder=ordered -p readproportion=0.5 -p updateproportion=0.06 -p insertproportion=0.4 -p scanproportion=0.0 -p maxscanlength=1000 -p scanlengthdistribution=uniform -p core_workload_insertion_retry_limit=3 -p core_workload_insertion_retry_interval=3 -p reportlatencyforeacherror=true -p insertstart=0  -p hdrhistogram.percentiles=50,90,95,99,99.99,99.99999 
+/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java -XX:MaxRAMPercentage=85.0 -cp /binary/ycsb/aerospike7-binding/conf:/binary/ycsb/conf:/binary/ycsb/lib/htrace-core4-4.1.0-incubating.jar:/binary/ycsb/lib/jackson-mapper-asl-1.9.4.jar:/binary/ycsb/lib/core-0.18.0-SNAPSHOT.jar:/binary/ycsb/lib/jackson-core-asl-1.9.4.jar:/binary/ycsb/lib/HdrHistogram-2.1.4.jar:/binary/ycsb/aerospike7-binding/lib/aerospike7-binding-0.18.0-SNAPSHOT.jar:/binary/ycsb/aerospike7-binding/lib/gnu-crypto-2.0.1.jar:/binary/ycsb/aerospike7-binding/lib/luaj-jse-3.0.1.jar:/binary/ycsb/aerospike7-binding/lib/aerospike-client-jdk8-8.1.1.jar:/binary/ycsb/aerospike7-binding/lib/jbcrypt-0.4.jar site.ycsb.Client -db site.ycsb.db.Aerospike7Client -s -p as.host=172.31.22.136 -p as.namespace=benchantdb -p as.connpoolspernode=1 -p as.connspernode=2400 -p as.usecompression=false -p workload=site.ycsb.workloads.CoreWorkload -threads 200 -p recordcount=50000000 -p operationcount=5800000000 -p fieldcount=10 -p fieldlength=200 -p requestdistribution=uniform-growing -p insertorder=ordered -p readproportion=0.5 -p updateproportion=0.06 -p insertproportion=0.4 -p scanproportion=0.0 -p maxscanlength=1000 -p scanlengthdistribution=uniform -p core_workload_insertion_retry_limit=3 -p core_workload_insertion_retry_interval=3 -p reportlatencyforeacherror=true -p insertstart=0 -p hdrhistogram.percentiles=50,90,95,99,99.99,99.99999 -load
+Command line: -db site.ycsb.db.Aerospike7Client -s -p as.host=172.31.22.136 -p as.namespace=benchantdb -p as.connpoolspernode=1 -p as.connspernode=2400 -p as.usecompression=false -p workload=site.ycsb.workloads.CoreWorkload -threads 200 -p recordcount=50000000 -p operationcount=5800000000 -p fieldcount=10 -p fieldlength=200 -p requestdistribution=uniform-growing -p insertorder=ordered -p readproportion=0.5 -p updateproportion=0.06 -p insertproportion=0.4 -p scanproportion=0.0 -p maxscanlength=1000 -p scanlengthdistribution=uniform -p core_workload_insertion_retry_limit=3 -p core_workload_insertion_retry_interval=3 -p reportlatencyforeacherror=true -p insertstart=0 -p hdrhistogram.percentiles=50,90,95,99,99.99,99.99999 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+insertstart, insertcount, recordcount: 0, 50000000, 50000000
+CoreWorkload init --- orderedinserts: true
+Starting test.
+Aerospike binding read policy: max retries 0
+Aerospike binding read policy: total timeout 10000
+Aerospike binding read policy: compress false
+Aerospike binding insert policy: record exists action CREATE_ONLY
+Aerospike binding update policy: record exists action UPDATE_ONLY
+Aerospike binding delete policy: durable deletetrue
+Aerospike binding: use batch size: 0
+Aerospike binding: use debug logging: false
+Aerospike binding: min / max connections per node: 2400
+Aerospike binding: pools per node: 1
+2025-03-20 22:47:47:805 0 sec: 0 operations; est completion in 0 second 
+Aerospike binding: intializing secondary indexes, if any
+DBWrapper: report latency for each error is true and specific error codes to track for latency are: []
+2025-03-20 22:47:57:793 10 sec: 3622451 operations; 362208.88 current ops/sec; est completion in 2 minutes [INSERT: Count=3623133, Max=30047, Min=196, Avg=471.62, 90=611, 99=865, 99.9=2877, 99.99=9919] [INSERT-COMB: Count=3625729, Max=30047, Min=196, Avg=471.61, 90=611, 99=865, 99.9=2875, 99.99=9775] 
+2025-03-20 22:48:07:793 20 sec: 7866525 operations; 424449.84 current ops/sec; est completion in 1 minute [INSERT: Count=4243526, Max=5411, Min=195, Avg=469.2, 90=602, 99=829, 99.9=3143, 99.99=3835] [INSERT-COMB: Count=4243105, Max=5411, Min=195, Avg=469.2, 90=602, 99=829, 99.9=3145, 99.99=3835] 
+2025-03-20 22:48:17:793 30 sec: 12089995 operations; 422304.77 current ops/sec; est completion in 1 minute [INSERT: Count=4223466, Max=16799, Min=190, Avg=471.49, 90=601, 99=831, 99.9=3297, 99.99=3969] [INSERT-COMB: Count=4223218, Max=16799, Min=190, Avg=471.49, 90=601, 99=831, 99.9=3297, 99.99=3969] 
+2025-03-20 22:48:27:793 40 sec: 16313502 operations; 422392.94 current ops/sec; est completion in 1 minute [INSERT: Count=4223523, Max=5899, Min=197, Avg=471.49, 90=602, 99=830, 99.9=3269, 99.99=3849] [INSERT-COMB: Count=4223353, Max=5899, Min=197, Avg=471.49, 90=602, 99=830, 99.9=3269, 99.99=3849] 
+2025-03-20 22:48:37:793 50 sec: 20534202 operations; 422027.8 current ops/sec; est completion in 1 minute [INSERT: Count=4220839, Max=12879, Min=191, Avg=471.83, 90=603, 99=828, 99.9=3275, 99.99=3843] [INSERT-COMB: Count=4220901, Max=12879, Min=191, Avg=471.83, 90=603, 99=828, 99.9=3275, 99.99=3843] 
+2025-03-20 22:48:47:793 60 sec: 24753192 operations; 421899 current ops/sec; est completion in 1 minute [INSERT: Count=4219010, Max=4927, Min=199, Avg=471.98, 90=603, 99=826, 99.9=3293, 99.99=3881] [INSERT-COMB: Count=4218666, Max=4927, Min=199, Avg=472.08, 90=603, 99=827, 99.9=3301, 99.99=3881] 
+2025-03-20 22:48:57:793 70 sec: 28968241 operations; 421504.9 current ops/sec; est completion in 51 seconds [INSERT: Count=4214873, Max=5627, Min=207, Avg=472.47, 90=604, 99=832, 99.9=3285, 99.99=3855] [INSERT-COMB: Count=4214418, Max=5627, Min=207, Avg=472.38, 90=604, 99=831, 99.9=3279, 99.99=3853] 
+2025-03-20 22:49:07:793 80 sec: 33178612 operations; 421037.1 current ops/sec; est completion in 41 seconds [INSERT: Count=4210380, Max=5179, Min=203, Avg=472.93, 90=604, 99=831, 99.9=3311, 99.99=3881] [INSERT-COMB: Count=4210386, Max=5179, Min=203, Avg=472.93, 90=604, 99=831, 99.9=3311, 99.99=3881] 
+2025-03-20 22:49:17:793 90 sec: 37384645 operations; 420645.36 current ops/sec; est completion in 31 seconds [INSERT: Count=4206009, Max=16543, Min=204, Avg=473.43, 90=605, 99=834, 99.9=3343, 99.99=3953] [INSERT-COMB: Count=4205641, Max=16543, Min=204, Avg=473.43, 90=605, 99=834, 99.9=3343, 99.99=3953] 
+2025-03-20 22:49:27:793 100 sec: 41588069 operations; 420342.4 current ops/sec; est completion in 21 seconds [INSERT: Count=4203442, Max=7891, Min=202, Avg=473.75, 90=606, 99=833, 99.9=3349, 99.99=3935] [INSERT-COMB: Count=4203542, Max=7891, Min=202, Avg=473.75, 90=606, 99=833, 99.9=3349, 99.99=3935] 
+2025-03-20 22:49:37:793 110 sec: 45791680 operations; 420319.07 current ops/sec; est completion in 11 seconds [INSERT: Count=4203604, Max=6991, Min=196, Avg=473.73, 90=606, 99=834, 99.9=3299, 99.99=3895] [INSERT-COMB: Count=4203377, Max=6991, Min=196, Avg=473.73, 90=606, 99=834, 99.9=3299, 99.99=3895] 
+2025-03-20 22:49:47:793 120 sec: 49901117 operations; 410943.7 current ops/sec; est completion in 1 second [CLEANUP-COMB: Count=153, Max=14, Min=0, Avg=1.47, 90=2, 99=3, 99.9=14, 99.99=14] [CLEANUP: Count=153, Max=14, Min=0, Avg=1.47, 90=2, 99=3, 99.9=14, 99.99=14] [INSERT: Count=4109429, Max=4779, Min=181, Avg=471.19, 90=604, 99=827, 99.9=3341, 99.99=3959] [INSERT-COMB: Count=4109025, Max=4779, Min=181, Avg=471.19, 90=604, 99=827, 99.9=3341, 99.99=3959] 
+2025-03-20 22:49:48:625 120 sec: 50000000 operations; 118992.78 current ops/sec; [CLEANUP-COMB: Count=47, Max=39039, Min=1, Avg=832.15, 90=4, 99=39039, 99.9=39039, 99.99=39039] [CLEANUP: Count=47, Max=39039, Min=1, Avg=832.15, 90=4, 99=39039, 99.9=39039, 99.99=39039] [INSERT: Count=98766, Max=1842, Min=190, Avg=290.87, 90=346, 99=402, 99.9=1116, 99.99=1673] [INSERT-COMB: Count=98639, Max=1842, Min=190, Avg=290.85, 90=346, 99=402, 99.9=1116, 99.99=1673] 
+[OVERALL], RunTime(ms), 120832
+[OVERALL], Throughput(ops/sec), 413797.66949152545
+[TOTAL_GCS_PS_Scavenge], Count, 1056
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 1082
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.895458156779661
+[TOTAL_GCS_PS_MarkSweep], Count, 0
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 0
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0
+[TOTAL_GCs], Count, 1056
+[TOTAL_GC_TIME], Time(ms), 1082
+[TOTAL_GC_TIME_%], Time(%), 0.895458156779661
+[CLEANUP-COMB], Operations, 200
+[CLEANUP-COMB], AverageLatency(us), 196.68
+[CLEANUP-COMB], MinLatency(us), 0
+[CLEANUP-COMB], MaxLatency(us), 39039
+[CLEANUP-COMB], 50thPercentileLatency(us), 1
+[CLEANUP-COMB], 90thPercentileLatency(us), 2
+[CLEANUP-COMB], 95thPercentileLatency(us), 3
+[CLEANUP-COMB], 99thPercentileLatency(us), 5
+[CLEANUP-COMB], 99.99PercentileLatency(us), 39039
+[CLEANUP-COMB], 99.99999PercentileLatency(us), 39039
+[CLEANUP], Operations, 200
+[CLEANUP], AverageLatency(us), 196.68
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 39039
+[CLEANUP], 50thPercentileLatency(us), 1
+[CLEANUP], 90thPercentileLatency(us), 2
+[CLEANUP], 95thPercentileLatency(us), 3
+[CLEANUP], 99thPercentileLatency(us), 5
+[CLEANUP], 99.99PercentileLatency(us), 39039
+[CLEANUP], 99.99999PercentileLatency(us), 39039
+[INSERT], Operations, 50000000
+[INSERT], AverageLatency(us), 471.73959576
+[INSERT], MinLatency(us), 181
+[INSERT], MaxLatency(us), 30047
+[INSERT], 50thPercentileLatency(us), 445
+[INSERT], 90thPercentileLatency(us), 604
+[INSERT], 95thPercentileLatency(us), 665
+[INSERT], 99thPercentileLatency(us), 833
+[INSERT], 99.99PercentileLatency(us), 3963
+[INSERT], 99.99999PercentileLatency(us), 24335
+[INSERT], Return=OK, 50000000
+[INSERT-COMB], Operations, 50000000
+[INSERT-COMB], AverageLatency(us), 471.73959576
+[INSERT-COMB], MinLatency(us), 181
+[INSERT-COMB], MaxLatency(us), 30047
+[INSERT-COMB], 50thPercentileLatency(us), 445
+[INSERT-COMB], 90thPercentileLatency(us), 604
+[INSERT-COMB], 95thPercentileLatency(us), 665
+[INSERT-COMB], 99thPercentileLatency(us), 833
+[INSERT-COMB], 99.99PercentileLatency(us), 3963
+[INSERT-COMB], 99.99999PercentileLatency(us), 24335

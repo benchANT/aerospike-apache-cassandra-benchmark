@@ -1,0 +1,18 @@
+{
+    "load": {
+        "insertComplete": true,
+        "Exceptions": {
+            "total": 0
+        },
+        "insertRetryError": 0
+    },
+    "run": {
+        "executionTimeReached": true,
+        "Exceptions": {
+            "total": 105,
+            "java.lang.Exception": 1,
+            "[s0-admin-0] WARN com.datastax.oss.driver.internal.core.pool.ChannelPool - [s0|/172.31.30.203:9042]  Error while opening new channel (ConnectionInitException": 104
+        },
+        "insertRetryError": 0
+    }
+}

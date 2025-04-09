@@ -1,0 +1,1468 @@
+bin/ycsb load cassandra4-cql -s -jvm-args=-XX:MaxRAMPercentage=85.0  -p hosts=172.31.8.63,172.31.11.94,172.31.6.205,172.31.2.123,172.31.5.214,172.31.12.116 -p cassandra.keyspace=ycsb -p cassandra.username=benchant -p cassandra.password=Performance99 -p cassandra.initDefaultTable=false -p cassandra.useSecureBundle=false -p  cassandra.writeconsistencylevel=QUORUM -p workload=site.ycsb.workloads.CoreWorkload -threads 300 -p recordcount=50000000 -p operationcount=2800000000 -p fieldcount=10 -p fieldlength=200 -p requestdistribution=uniform-growing -p insertorder=ordered -p readproportion=0.5 -p updateproportion=0.06 -p insertproportion=0.4 -p scanproportion=0.0 -p maxscanlength=1000 -p scanlengthdistribution=uniform -p core_workload_insertion_retry_limit=3 -p core_workload_insertion_retry_interval=3 -p insertstart=0  -p hdrhistogram.percentiles=50,90,95,99,99.99,99.99999 
+/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java -XX:MaxRAMPercentage=85.0 -cp /binary/ycsb/cassandra4-binding/conf:/binary/ycsb/conf:/binary/ycsb/lib/htrace-core4-4.1.0-incubating.jar:/binary/ycsb/lib/jackson-mapper-asl-1.9.4.jar:/binary/ycsb/lib/core-0.18.0-SNAPSHOT.jar:/binary/ycsb/lib/jackson-core-asl-1.9.4.jar:/binary/ycsb/lib/HdrHistogram-2.1.4.jar:/binary/ycsb/cassandra4-binding/lib/asm-tree-9.1.jar:/binary/ycsb/cassandra4-binding/lib/asm-analysis-9.1.jar:/binary/ycsb/cassandra4-binding/lib/netty-handler-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/netty-codec-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/slf4j-simple-1.7.21.jar:/binary/ycsb/cassandra4-binding/lib/jackson-annotations-2.12.2.jar:/binary/ycsb/cassandra4-binding/lib/jackson-core-2.12.2.jar:/binary/ycsb/cassandra4-binding/lib/jnr-posix-3.1.5.jar:/binary/ycsb/cassandra4-binding/lib/asm-9.1.jar:/binary/ycsb/cassandra4-binding/lib/spotbugs-annotations-3.1.12.jar:/binary/ycsb/cassandra4-binding/lib/json-20090211.jar:/binary/ycsb/cassandra4-binding/lib/netty-buffer-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/netty-common-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/jffi-1.3.1-native.jar:/binary/ycsb/cassandra4-binding/lib/reactive-streams-1.0.3.jar:/binary/ycsb/cassandra4-binding/lib/netty-transport-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/java-driver-core-4.13.0.jar:/binary/ycsb/cassandra4-binding/lib/asm-commons-9.1.jar:/binary/ycsb/cassandra4-binding/lib/java-driver-query-builder-4.13.0.jar:/binary/ycsb/cassandra4-binding/lib/jsr305-3.0.2.jar:/binary/ycsb/cassandra4-binding/lib/jnr-constants-0.10.1.jar:/binary/ycsb/cassandra4-binding/lib/metrics-core-4.1.18.jar:/binary/ycsb/cassandra4-binding/lib/netty-resolver-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/jackson-databind-2.12.2.jar:/binary/ycsb/cassandra4-binding/lib/config-1.4.1.jar:/binary/ycsb/cassandra4-binding/lib/esri-geometry-api-1.2.1.jar:/binary/ycsb/cassandra4-binding/lib/java-driver-shaded-guava-25.1-jre-graal-sub-1.jar:/binary/ycsb/cassandra4-binding/lib/asm-util-9.1.jar:/binary/ycsb/cassandra4-binding/lib/jackson-core-asl-1.9.4.jar:/binary/ycsb/cassandra4-binding/lib/jffi-1.3.1.jar:/binary/ycsb/cassandra4-binding/lib/cassandra4-binding-0.18.0-SNAPSHOT.jar:/binary/ycsb/cassandra4-binding/lib/jcip-annotations-1.0-1.jar:/binary/ycsb/cassandra4-binding/lib/native-protocol-1.5.0.jar:/binary/ycsb/cassandra4-binding/lib/jnr-a64asm-1.0.0.jar:/binary/ycsb/cassandra4-binding/lib/jnr-x86asm-1.0.2.jar:/binary/ycsb/cassandra4-binding/lib/jnr-ffi-2.2.2.jar:/binary/ycsb/cassandra4-binding/lib/HdrHistogram-2.1.12.jar:/binary/ycsb/cassandra4-binding/lib/slf4j-api-1.7.25.jar site.ycsb.Client -db site.ycsb.db.cassandra4.CassandraCQLClient -s -p hosts=172.31.8.63,172.31.11.94,172.31.6.205,172.31.2.123,172.31.5.214,172.31.12.116 -p cassandra.keyspace=ycsb -p cassandra.username=benchant -p cassandra.password=Performance99 -p cassandra.initDefaultTable=false -p cassandra.useSecureBundle=false -p cassandra.writeconsistencylevel=QUORUM -p workload=site.ycsb.workloads.CoreWorkload -threads 300 -p recordcount=50000000 -p operationcount=2800000000 -p fieldcount=10 -p fieldlength=200 -p requestdistribution=uniform-growing -p insertorder=ordered -p readproportion=0.5 -p updateproportion=0.06 -p insertproportion=0.4 -p scanproportion=0.0 -p maxscanlength=1000 -p scanlengthdistribution=uniform -p core_workload_insertion_retry_limit=3 -p core_workload_insertion_retry_interval=3 -p insertstart=0 -p hdrhistogram.percentiles=50,90,95,99,99.99,99.99999 -load
+Command line: -db site.ycsb.db.cassandra4.CassandraCQLClient -s -p hosts=172.31.8.63,172.31.11.94,172.31.6.205,172.31.2.123,172.31.5.214,172.31.12.116 -p cassandra.keyspace=ycsb -p cassandra.username=benchant -p cassandra.password=Performance99 -p cassandra.initDefaultTable=false -p cassandra.useSecureBundle=false -p cassandra.writeconsistencylevel=QUORUM -p workload=site.ycsb.workloads.CoreWorkload -threads 300 -p recordcount=50000000 -p operationcount=2800000000 -p fieldcount=10 -p fieldlength=200 -p requestdistribution=uniform-growing -p insertorder=ordered -p readproportion=0.5 -p updateproportion=0.06 -p insertproportion=0.4 -p scanproportion=0.0 -p maxscanlength=1000 -p scanlengthdistribution=uniform -p core_workload_insertion_retry_limit=3 -p core_workload_insertion_retry_interval=3 -p insertstart=0 -p hdrhistogram.percentiles=50,90,95,99,99.99,99.99999 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+insertstart, insertcount, recordcount: 0, 50000000, 50000000
+CoreWorkload init --- orderedinserts: true
+Starting test.
+[Thread-30] INFO site.ycsb.db.cassandra4.CassandraCQLClient - setting read (and default) Consistency to 'QUORUM'
+[Thread-30] INFO site.ycsb.db.cassandra4.CassandraCQLClient - setting write Consistency to 'QUORUM'
+2025-03-09 08:41:59:692 0 sec: 0 operations; est completion in 0 second 
+[Thread-30] INFO com.datastax.oss.driver.internal.core.DefaultMavenCoordinates - DataStax Java driver for Apache Cassandra(R) (com.datastax.oss:java-driver-core) version 4.13.0
+[s0-admin-0] INFO com.datastax.oss.driver.internal.core.time.Clock - Using native clock for microsecond precision
+[s0-io-2] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.12.116:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-3] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.12.116:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-5] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.6.205:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-7] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.11.94:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-6] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.8.63:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-8] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.5.214:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-4] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.2.123:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[Thread-30] INFO site.ycsb.db.cassandra4.CassandraCQLClient - Connected to cluster: Optional[benchANT Cluster]
+
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2025-03-09 08:42:09:674 10 sec: 1548925 operations; 154892.5 current ops/sec; est completion in 5 minutes [INSERT: Count=1549017, Max=185983, Min=439, Avg=1766.69, 90=3105, 99=7167, 99.9=14567, 99.99=152447] 
+2025-03-09 08:42:19:674 20 sec: 3699271 operations; 215034.6 current ops/sec; est completion in 4 minutes [INSERT: Count=2150356, Max=15351, Min=423, Avg=1393.36, 90=1887, 99=3737, 99.9=6595, 99.99=10047] 
+2025-03-09 08:42:29:674 30 sec: 5431740 operations; 173246.9 current ops/sec; est completion in 4 minutes [INSERT: Count=1732404, Max=1716223, Min=396, Avg=1730.21, 90=2115, 99=3759, 99.9=7727, 99.99=1327103] 
+2025-03-09 08:42:39:674 40 sec: 7323106 operations; 189136.6 current ops/sec; est completion in 3 minutes [INSERT: Count=1891390, Max=1214463, Min=392, Avg=1584.66, 90=2061, 99=3687, 99.9=7063, 99.99=559103] 
+2025-03-09 08:42:49:674 50 sec: 9192353 operations; 186924.7 current ops/sec; est completion in 3 minutes [INSERT: Count=1869250, Max=471807, Min=400, Avg=1603.51, 90=2339, 99=4643, 99.9=7471, 99.99=10759] 
+2025-03-09 08:42:59:674 60 sec: 11034622 operations; 184226.9 current ops/sec; est completion in 3 minutes [INSERT: Count=1842259, Max=600575, Min=435, Avg=1627.01, 90=2411, 99=4571, 99.9=7467, 99.99=10375] 
+2025-03-09 08:43:09:674 70 sec: 12885147 operations; 185052.5 current ops/sec; est completion in 3 minutes [INSERT: Count=1850536, Max=581631, Min=387, Avg=1619.7, 90=2293, 99=4331, 99.9=7943, 99.99=232063] 
+2025-03-09 08:43:19:674 80 sec: 14756280 operations; 187113.3 current ops/sec; est completion in 3 minutes [INSERT: Count=1871131, Max=551423, Min=434, Avg=1601.87, 90=2297, 99=4355, 99.9=7907, 99.99=10199] 
+2025-03-09 08:43:29:674 90 sec: 16586906 operations; 183062.6 current ops/sec; est completion in 3 minutes [INSERT: Count=1830620, Max=784895, Min=441, Avg=1637.38, 90=2387, 99=4643, 99.9=7451, 99.99=10167] 
+2025-03-09 08:43:39:674 100 sec: 18422168 operations; 183526.2 current ops/sec; est completion in 2 minutes [INSERT: Count=1835252, Max=1029631, Min=393, Avg=1633.17, 90=2343, 99=4531, 99.9=7911, 99.99=17615] 
+2025-03-09 08:43:49:674 110 sec: 20131448 operations; 170928 current ops/sec; est completion in 2 minutes [INSERT: Count=1709233, Max=1508351, Min=403, Avg=1715.93, 90=2613, 99=5347, 99.9=8655, 99.99=13487] 
+[Thread-6] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130334
+[Thread-26] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130401
+[Thread-57] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130404
+[Thread-196] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130410
+[Thread-61] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130447
+[Thread-69] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130412
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-269] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130400
+[Thread-163] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130402
+[Thread-128] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130387
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-200] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130379
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-59] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130430
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-268] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130433
+[Thread-3] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130421
+[Thread-82] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130422
+[Thread-211] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user20130408
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+2025-03-09 08:43:59:675 120 sec: 21835226 operations; 170377.8 current ops/sec; est completion in 2 minutes [INSERT: Count=1703940, Max=418047, Min=444, Avg=1752.7, 90=2491, 99=4943, 99.9=9175, 99.99=412415] [INSERT-FAILED: Count=15, Max=2012159, Min=2008064, Avg=2009804.8, 90=2012159, 99=2012159, 99.9=2012159, 99.99=2012159] 
+[Thread-283] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004255
+[Thread-299] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004277
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-101] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004259
+[Thread-178] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004346
+[Thread-119] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004351
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-86] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004347
+[Thread-222] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004344
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-164] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004345
+Retrying insertion, retry count: 1
+[Thread-218] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004352
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-73] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004336
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-251] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004340
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-165] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user23004299
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+2025-03-09 08:44:09:674 130 sec: 23617950 operations; 178272.4 current ops/sec; est completion in 2 minutes [INSERT: Count=1782584, Max=36351, Min=379, Avg=1658.3, 90=2515, 99=5315, 99.9=9711, 99.99=24287] [INSERT-FAILED: Count=12, Max=2036735, Min=2031616, Avg=2035200, 90=2036735, 99=2036735, 99.9=2036735, 99.99=2036735] 
+2025-03-09 08:44:19:674 140 sec: 25353566 operations; 173561.6 current ops/sec; est completion in 2 minutes [INSERT: Count=1735646, Max=1343487, Min=387, Avg=1715.43, 90=2585, 99=5747, 99.9=13695, 99.99=23455] [INSERT-FAILED: Count=0, Max=0, Min=9223372036854775807, Avg=�, 90=0, 99=0, 99.9=0, 99.99=0] 
+2025-03-09 08:44:29:674 150 sec: 27181423 operations; 182785.7 current ops/sec; est completion in 2 minutes [INSERT: Count=1827853, Max=1527807, Min=413, Avg=1639.83, 90=2417, 99=4847, 99.9=8943, 99.99=17007] [INSERT-FAILED: Count=0, Max=0, Min=9223372036854775807, Avg=�, 90=0, 99=0, 99.9=0, 99.99=0] 
+[Thread-181] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user27455172
+[Thread-3] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user27455244
+[Thread-298] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user27455286
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-239] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user27455260
+[Thread-263] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user27455232
+[Thread-300] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user27455230
+[Thread-63] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user27455219
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+2025-03-09 08:44:39:674 160 sec: 28970102 operations; 178867.9 current ops/sec; est completion in 1 minute [INSERT: Count=1788672, Max=255871, Min=385, Avg=1654.58, 90=2415, 99=4799, 99.9=8903, 99.99=58431] [INSERT-FAILED: Count=7, Max=2103295, Min=2099200, Avg=2100516.57, 90=2101247, 99=2103295, 99.9=2103295, 99.99=2103295] 
+[Thread-159] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user28901177
+[Thread-25] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user28901285
+[Thread-165] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user28901291
+[Thread-241] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user28901276
+[Thread-280] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user28901280
+[Thread-187] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user28901273
+[Thread-265] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user28901249
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-209] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user28901286
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+2025-03-09 08:44:49:674 170 sec: 30774099 operations; 180399.7 current ops/sec; est completion in 1 minute [INSERT: Count=1804042, Max=18783, Min=425, Avg=1630.8, 90=2385, 99=4899, 99.9=8311, 99.99=10943] [INSERT-FAILED: Count=8, Max=2076671, Min=2074624, Avg=2075520, 90=2076671, 99=2076671, 99.9=2076671, 99.99=2076671] 
+2025-03-09 08:44:59:674 180 sec: 32623593 operations; 184949.4 current ops/sec; est completion in 1 minute [INSERT: Count=1849503, Max=1818623, Min=391, Avg=1630.95, 90=2377, 99=5115, 99.9=9071, 99.99=12871] [INSERT-FAILED: Count=0, Max=0, Min=9223372036854775807, Avg=�, 90=0, 99=0, 99.9=0, 99.99=0] 
+2025-03-09 08:45:09:674 190 sec: 34324569 operations; 170097.6 current ops/sec; est completion in 1 minute [INSERT: Count=1700938, Max=1341439, Min=392, Avg=1762.17, 90=2599, 99=5635, 99.9=9807, 99.99=199551] [INSERT-FAILED: Count=0, Max=0, Min=9223372036854775807, Avg=�, 90=0, 99=0, 99.9=0, 99.99=0] 
+[Thread-231] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997146
+[Thread-99] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997235
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-123] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997189
+[Thread-153] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997159
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-96] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997180
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-54] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997260
+[Thread-86] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997251
+[Thread-256] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997266
+[Thread-38] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997257
+[Thread-22] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997253
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-16] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997250
+[Thread-79] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997240
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-89] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997244
+Retrying insertion, retry count: 1
+[Thread-53] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997241
+[Thread-281] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997234
+[Thread-74] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997239
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-247] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user34997207
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+2025-03-09 08:45:19:674 200 sec: 36102146 operations; 177757.7 current ops/sec; est completion in 1 minute [INSERT: Count=1777644, Max=42623, Min=393, Avg=1638.42, 90=2433, 99=4855, 99.9=9327, 99.99=30303] [INSERT-FAILED: Count=17, Max=2021375, Min=2015232, Avg=2018575.06, 90=2021375, 99=2021375, 99.9=2021375, 99.99=2021375] 
+2025-03-09 08:45:29:674 210 sec: 37917034 operations; 181488.8 current ops/sec; est completion in 1 minute [INSERT: Count=1814846, Max=1303551, Min=413, Avg=1651.61, 90=2395, 99=5019, 99.9=8423, 99.99=12887] [INSERT-FAILED: Count=0, Max=0, Min=9223372036854775807, Avg=�, 90=0, 99=0, 99.9=0, 99.99=0] 
+2025-03-09 08:45:39:674 220 sec: 39704536 operations; 178750.2 current ops/sec; est completion in 58 seconds [INSERT: Count=1787473, Max=602623, Min=410, Avg=1676.87, 90=2537, 99=5411, 99.9=9143, 99.99=15583] [INSERT-FAILED: Count=0, Max=0, Min=9223372036854775807, Avg=�, 90=0, 99=0, 99.9=0, 99.99=0] 
+[Thread-232] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739406
+[Thread-105] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739521
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-104] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739517
+[Thread-226] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739510
+[Thread-89] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739506
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-111] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739576
+[Thread-152] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739568
+[Thread-77] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739531
+[Thread-197] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739556
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-41] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739541
+Retrying insertion, retry count: 1
+[Thread-66] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739527
+[Thread-212] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739557
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-24] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739528
+[Thread-70] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user39739529
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+2025-03-09 08:45:49:674 230 sec: 41509894 operations; 180535.8 current ops/sec; est completion in 48 seconds [INSERT: Count=1805366, Max=64223, Min=400, Avg=1621.06, 90=2355, 99=4807, 99.9=8279, 99.99=60831] [INSERT-FAILED: Count=14, Max=2020351, Min=2018304, Avg=2018962.29, 90=2020351, 99=2020351, 99.9=2020351, 99.99=2020351] 
+[Thread-98] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user42827688
+[Thread-210] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user42827689
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+2025-03-09 08:45:59:674 240 sec: 43257340 operations; 174744.6 current ops/sec; est completion in 38 seconds [INSERT: Count=1747405, Max=678399, Min=443, Avg=1712.61, 90=2643, 99=5171, 99.9=8551, 99.99=11671] [INSERT-FAILED: Count=2, Max=2056191, Min=2055168, Avg=2055680, 90=2056191, 99=2056191, 99.9=2056191, 99.99=2056191] 
+[Thread-127] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user44409065
+[Thread-193] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user44409087
+[Thread-283] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user44409082
+[Thread-66] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user44409098
+[Thread-37] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user44409078
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-137] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user44409069
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+[Thread-203] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user44409103
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-222] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user44409097
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-251] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user44409085
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+2025-03-09 08:46:09:674 250 sec: 45050640 operations; 179330 current ops/sec; est completion in 28 seconds [INSERT: Count=1793346, Max=74751, Min=441, Avg=1650.68, 90=2475, 99=5287, 99.9=9007, 99.99=19967] [INSERT-FAILED: Count=9, Max=2085887, Min=2083840, Avg=2084920.89, 90=2085887, 99=2085887, 99.9=2085887, 99.99=2085887] 
+[Thread-23] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user45897296
+[Thread-271] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user45897369
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-71] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user45897479
+[Thread-268] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user45897478
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+2025-03-09 08:46:19:674 260 sec: 46748067 operations; 169742.7 current ops/sec; est completion in 19 seconds [INSERT: Count=1697401, Max=1612799, Min=386, Avg=1747.5, 90=2413, 99=5051, 99.9=8495, 99.99=643071] [INSERT-FAILED: Count=4, Max=2083839, Min=2081792, Avg=2083072, 90=2083839, 99=2083839, 99.9=2083839, 99.99=2083839] 
+[Thread-77] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user47351065
+[Thread-163] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user47351062
+[Thread-301] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user47351066
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+[Thread-148] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user47351077
+Retrying insertion, retry count: 1
+[Thread-296] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user47351095
+[Thread-289] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user47351096
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+[Thread-229] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user47351092
+[Thread-256] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user47351081
+Retrying insertion, retry count: 1
+[Thread-113] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user47351073
+[Thread-240] ERROR site.ycsb.db.cassandra4.CassandraCQLClient - Error inserting key: user47351079
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+com.datastax.oss.driver.api.core.DriverTimeoutException: Query timed out after PT2S
+	at com.datastax.oss.driver.api.core.DriverTimeoutException.copy(DriverTimeoutException.java:34)
+	at com.datastax.oss.driver.internal.core.util.concurrent.CompletableFutures.getUninterruptibly(CompletableFutures.java:149)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:53)
+	at com.datastax.oss.driver.internal.core.cql.CqlRequestSyncProcessor.process(CqlRequestSyncProcessor.java:30)
+	at com.datastax.oss.driver.internal.core.session.DefaultSession.execute(DefaultSession.java:230)
+	at com.datastax.oss.driver.api.core.cql.SyncCqlSession.execute(SyncCqlSession.java:54)
+	at site.ycsb.db.cassandra4.CassandraCQLClient.insert(CassandraCQLClient.java:500)
+	at site.ycsb.DBWrapper.insert(DBWrapper.java:227)
+	at site.ycsb.workloads.CoreWorkload.doInsert(CoreWorkload.java:645)
+	at site.ycsb.ClientThread.run(ClientThread.java:135)
+	at java.lang.Thread.run(Thread.java:750)
+Retrying insertion, retry count: 1
+Retrying insertion, retry count: 1
+2025-03-09 08:46:29:674 270 sec: 48377330 operations; 162926.3 current ops/sec; est completion in 10 seconds [INSERT: Count=1629260, Max=1660927, Min=412, Avg=1805.89, 90=2559, 99=4919, 99.9=9447, 99.99=622591] [INSERT-FAILED: Count=10, Max=2103295, Min=2101248, Avg=2102272, 90=2103295, 99=2103295, 99.9=2103295, 99.99=2103295] 
+2025-03-09 08:46:39:674 280 sec: 49970027 operations; 159269.7 current ops/sec; est completion in 1 second [CLEANUP: Count=277, Max=12, Min=0, Avg=1.81, 90=3, 99=7, 99.9=12, 99.99=12] [INSERT: Count=1592677, Max=1547263, Min=360, Avg=1435.82, 90=2127, 99=4507, 99.9=7679, 99.99=9959] [INSERT-FAILED: Count=0, Max=0, Min=9223372036854775807, Avg=�, 90=0, 99=0, 99.9=0, 99.99=0] 
+2025-03-09 08:46:43:672 283 sec: 50000000 operations; 7498.87 current ops/sec; [CLEANUP: Count=23, Max=2016255, Min=0, Avg=87641.04, 90=0, 99=2016255, 99.9=2016255, 99.99=2016255] [INSERT: Count=29956, Max=9415, Min=355, Avg=490.53, 90=545, 99=872, 99.9=1188, 99.99=6991] [INSERT-FAILED: Count=0, Max=0, Min=9223372036854775807, Avg=�, 90=0, 99=0, 99.9=0, 99.99=0] 
+[OVERALL], RunTime(ms), 283997
+[OVERALL], Throughput(ops/sec), 176058.19779786406
+[TOTAL_GCS_PS_Scavenge], Count, 618
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 2786
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 0.9809962781296986
+[TOTAL_GCS_PS_MarkSweep], Count, 1
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 18
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.006338095120723105
+[TOTAL_GCs], Count, 619
+[TOTAL_GC_TIME], Time(ms), 2804
+[TOTAL_GC_TIME_%], Time(%), 0.9873343732504216
+[CLEANUP], Operations, 300
+[CLEANUP], AverageLatency(us), 6720.82
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 2016255
+[CLEANUP], 50thPercentileLatency(us), 1
+[CLEANUP], 90thPercentileLatency(us), 3
+[CLEANUP], 95thPercentileLatency(us), 4
+[CLEANUP], 99thPercentileLatency(us), 7
+[CLEANUP], 99.99PercentileLatency(us), 2016255
+[CLEANUP], 99.99999PercentileLatency(us), 2016255
+[INSERT], Operations, 50000000
+[INSERT], AverageLatency(us), 1649.47691456
+[INSERT], MinLatency(us), 355
+[INSERT], MaxLatency(us), 1818623
+[INSERT], 50thPercentileLatency(us), 1429
+[INSERT], 90thPercentileLatency(us), 2395
+[INSERT], 95thPercentileLatency(us), 2979
+[INSERT], 99thPercentileLatency(us), 4955
+[INSERT], 99.99PercentileLatency(us), 22271
+[INSERT], 99.99999PercentileLatency(us), 1814527
+[INSERT], Return=OK, 50000000
+[INSERT], Return=ERROR, 98
+[INSERT-FAILED], Operations, 98
+[INSERT-FAILED], AverageLatency(us), 2047848.4897959183
+[INSERT-FAILED], MinLatency(us), 2008064
+[INSERT-FAILED], MaxLatency(us), 2103295
+[INSERT-FAILED], 50thPercentileLatency(us), 2035711
+[INSERT-FAILED], 90thPercentileLatency(us), 2103295
+[INSERT-FAILED], 95thPercentileLatency(us), 2103295
+[INSERT-FAILED], 99thPercentileLatency(us), 2103295
+[INSERT-FAILED], 99.99PercentileLatency(us), 2103295
+[INSERT-FAILED], 99.99999PercentileLatency(us), 2103295

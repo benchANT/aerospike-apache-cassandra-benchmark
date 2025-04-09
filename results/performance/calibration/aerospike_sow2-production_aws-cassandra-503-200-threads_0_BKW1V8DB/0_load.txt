@@ -1,0 +1,87 @@
+bin/ycsb load cassandra4-cql -s -jvm-args=-XX:MaxRAMPercentage=85.0  -p hosts=172.31.1.207,172.31.11.237,172.31.4.172,172.31.7.105,172.31.15.99,172.31.2.15 -p cassandra.keyspace=ycsb -p cassandra.username=benchant -p cassandra.password=Performance99 -p cassandra.initDefaultTable=false -p cassandra.useSecureBundle=false -p  cassandra.writeconsistencylevel=QUORUM -p workload=site.ycsb.workloads.CoreWorkload -threads 200 -p recordcount=50000000 -p operationcount=2800000000 -p fieldcount=10 -p fieldlength=200 -p requestdistribution=uniform-growing -p insertorder=ordered -p readproportion=0.5 -p updateproportion=0.06 -p insertproportion=0.4 -p scanproportion=0.0 -p maxscanlength=1000 -p scanlengthdistribution=uniform -p core_workload_insertion_retry_limit=3 -p core_workload_insertion_retry_interval=3 -p insertstart=0  -p hdrhistogram.percentiles=50,90,95,99,99.99,99.99999 
+/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java -XX:MaxRAMPercentage=85.0 -cp /binary/ycsb/cassandra4-binding/conf:/binary/ycsb/conf:/binary/ycsb/lib/htrace-core4-4.1.0-incubating.jar:/binary/ycsb/lib/jackson-mapper-asl-1.9.4.jar:/binary/ycsb/lib/core-0.18.0-SNAPSHOT.jar:/binary/ycsb/lib/jackson-core-asl-1.9.4.jar:/binary/ycsb/lib/HdrHistogram-2.1.4.jar:/binary/ycsb/cassandra4-binding/lib/asm-tree-9.1.jar:/binary/ycsb/cassandra4-binding/lib/asm-analysis-9.1.jar:/binary/ycsb/cassandra4-binding/lib/netty-handler-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/netty-codec-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/slf4j-simple-1.7.21.jar:/binary/ycsb/cassandra4-binding/lib/jackson-annotations-2.12.2.jar:/binary/ycsb/cassandra4-binding/lib/jackson-core-2.12.2.jar:/binary/ycsb/cassandra4-binding/lib/jnr-posix-3.1.5.jar:/binary/ycsb/cassandra4-binding/lib/asm-9.1.jar:/binary/ycsb/cassandra4-binding/lib/spotbugs-annotations-3.1.12.jar:/binary/ycsb/cassandra4-binding/lib/json-20090211.jar:/binary/ycsb/cassandra4-binding/lib/netty-buffer-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/netty-common-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/jffi-1.3.1-native.jar:/binary/ycsb/cassandra4-binding/lib/reactive-streams-1.0.3.jar:/binary/ycsb/cassandra4-binding/lib/netty-transport-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/java-driver-core-4.13.0.jar:/binary/ycsb/cassandra4-binding/lib/asm-commons-9.1.jar:/binary/ycsb/cassandra4-binding/lib/java-driver-query-builder-4.13.0.jar:/binary/ycsb/cassandra4-binding/lib/jsr305-3.0.2.jar:/binary/ycsb/cassandra4-binding/lib/jnr-constants-0.10.1.jar:/binary/ycsb/cassandra4-binding/lib/metrics-core-4.1.18.jar:/binary/ycsb/cassandra4-binding/lib/netty-resolver-4.1.60.Final.jar:/binary/ycsb/cassandra4-binding/lib/jackson-databind-2.12.2.jar:/binary/ycsb/cassandra4-binding/lib/config-1.4.1.jar:/binary/ycsb/cassandra4-binding/lib/esri-geometry-api-1.2.1.jar:/binary/ycsb/cassandra4-binding/lib/java-driver-shaded-guava-25.1-jre-graal-sub-1.jar:/binary/ycsb/cassandra4-binding/lib/asm-util-9.1.jar:/binary/ycsb/cassandra4-binding/lib/jackson-core-asl-1.9.4.jar:/binary/ycsb/cassandra4-binding/lib/jffi-1.3.1.jar:/binary/ycsb/cassandra4-binding/lib/cassandra4-binding-0.18.0-SNAPSHOT.jar:/binary/ycsb/cassandra4-binding/lib/jcip-annotations-1.0-1.jar:/binary/ycsb/cassandra4-binding/lib/native-protocol-1.5.0.jar:/binary/ycsb/cassandra4-binding/lib/jnr-a64asm-1.0.0.jar:/binary/ycsb/cassandra4-binding/lib/jnr-x86asm-1.0.2.jar:/binary/ycsb/cassandra4-binding/lib/jnr-ffi-2.2.2.jar:/binary/ycsb/cassandra4-binding/lib/HdrHistogram-2.1.12.jar:/binary/ycsb/cassandra4-binding/lib/slf4j-api-1.7.25.jar site.ycsb.Client -db site.ycsb.db.cassandra4.CassandraCQLClient -s -p hosts=172.31.1.207,172.31.11.237,172.31.4.172,172.31.7.105,172.31.15.99,172.31.2.15 -p cassandra.keyspace=ycsb -p cassandra.username=benchant -p cassandra.password=Performance99 -p cassandra.initDefaultTable=false -p cassandra.useSecureBundle=false -p cassandra.writeconsistencylevel=QUORUM -p workload=site.ycsb.workloads.CoreWorkload -threads 200 -p recordcount=50000000 -p operationcount=2800000000 -p fieldcount=10 -p fieldlength=200 -p requestdistribution=uniform-growing -p insertorder=ordered -p readproportion=0.5 -p updateproportion=0.06 -p insertproportion=0.4 -p scanproportion=0.0 -p maxscanlength=1000 -p scanlengthdistribution=uniform -p core_workload_insertion_retry_limit=3 -p core_workload_insertion_retry_interval=3 -p insertstart=0 -p hdrhistogram.percentiles=50,90,95,99,99.99,99.99999 -load
+Command line: -db site.ycsb.db.cassandra4.CassandraCQLClient -s -p hosts=172.31.1.207,172.31.11.237,172.31.4.172,172.31.7.105,172.31.15.99,172.31.2.15 -p cassandra.keyspace=ycsb -p cassandra.username=benchant -p cassandra.password=Performance99 -p cassandra.initDefaultTable=false -p cassandra.useSecureBundle=false -p cassandra.writeconsistencylevel=QUORUM -p workload=site.ycsb.workloads.CoreWorkload -threads 200 -p recordcount=50000000 -p operationcount=2800000000 -p fieldcount=10 -p fieldlength=200 -p requestdistribution=uniform-growing -p insertorder=ordered -p readproportion=0.5 -p updateproportion=0.06 -p insertproportion=0.4 -p scanproportion=0.0 -p maxscanlength=1000 -p scanlengthdistribution=uniform -p core_workload_insertion_retry_limit=3 -p core_workload_insertion_retry_interval=3 -p insertstart=0 -p hdrhistogram.percentiles=50,90,95,99,99.99,99.99999 -load
+YCSB Client 0.18.0-SNAPSHOT
+
+Loading workload...
+insertstart, insertcount, recordcount: 0, 50000000, 50000000
+CoreWorkload init --- orderedinserts: true
+Starting test.
+[Thread-30] INFO site.ycsb.db.cassandra4.CassandraCQLClient - setting read (and default) Consistency to 'QUORUM'
+[Thread-30] INFO site.ycsb.db.cassandra4.CassandraCQLClient - setting write Consistency to 'QUORUM'
+2025-03-08 21:40:55:604 0 sec: 0 operations; est completion in 0 second 
+[Thread-30] INFO com.datastax.oss.driver.internal.core.DefaultMavenCoordinates - DataStax Java driver for Apache Cassandra(R) (com.datastax.oss:java-driver-core) version 4.13.0
+[s0-admin-0] INFO com.datastax.oss.driver.internal.core.time.Clock - Using native clock for microsecond precision
+[s0-io-2] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.4.172:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-3] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.11.237:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-7] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.4.172:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-6] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.1.207:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-4] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.15.99:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-5] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.2.15:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[s0-io-8] WARN com.datastax.oss.driver.api.core.auth.PlainTextAuthProviderBase - [] /172.31.7.105:9042 did not send an authentication challenge; This is suspicious because the driver expects authentication
+[Thread-30] INFO site.ycsb.db.cassandra4.CassandraCQLClient - Connected to cluster: Optional[benchANT Cluster]
+
+DBWrapper: report latency for each error is false and specific error codes to track for latency are: []
+2025-03-08 21:41:05:591 10 sec: 1415404 operations; 141526.25 current ops/sec; est completion in 5 minutes [INSERT: Count=1415514, Max=127679, Min=490, Avg=1283.41, 90=2009, 99=5219, 99.9=10255, 99.99=110719] 
+2025-03-08 21:41:15:591 20 sec: 3244067 operations; 182866.3 current ops/sec; est completion in 4 minutes [INSERT: Count=1828601, Max=21167, Min=472, Avg=1092.15, 90=1408, 99=2913, 99.9=5295, 99.99=10103] 
+2025-03-08 21:41:25:591 30 sec: 4967629 operations; 172356.2 current ops/sec; est completion in 4 minutes [INSERT: Count=1723601, Max=14655, Min=489, Avg=1158.85, 90=1511, 99=2271, 99.9=5283, 99.99=8719] 
+2025-03-08 21:41:35:591 40 sec: 6749676 operations; 178204.7 current ops/sec; est completion in 4 minutes [INSERT: Count=1782040, Max=13975, Min=481, Avg=1120.76, 90=1473, 99=2377, 99.9=4991, 99.99=7763] 
+2025-03-08 21:41:45:591 50 sec: 8483989 operations; 173431.3 current ops/sec; est completion in 4 minutes [INSERT: Count=1734277, Max=16175, Min=486, Avg=1151.67, 90=1517, 99=2799, 99.9=6187, 99.99=7875] 
+2025-03-08 21:41:55:591 60 sec: 10198267 operations; 171427.8 current ops/sec; est completion in 3 minutes [INSERT: Count=1714256, Max=12759, Min=490, Avg=1165.16, 90=1525, 99=2463, 99.9=6111, 99.99=7759] 
+2025-03-08 21:42:05:591 70 sec: 11910046 operations; 171177.9 current ops/sec; est completion in 3 minutes [INSERT: Count=1711865, Max=16271, Min=488, Avg=1166.84, 90=1527, 99=2513, 99.9=6619, 99.99=8479] 
+2025-03-08 21:42:15:591 80 sec: 13601082 operations; 169103.6 current ops/sec; est completion in 3 minutes [INSERT: Count=1690977, Max=16559, Min=497, Avg=1181.19, 90=1569, 99=2657, 99.9=6427, 99.99=7823] 
+2025-03-08 21:42:25:591 90 sec: 15248390 operations; 164730.8 current ops/sec; est completion in 3 minutes [INSERT: Count=1647291, Max=12679, Min=484, Avg=1212.54, 90=1614, 99=2773, 99.9=6095, 99.99=7339] 
+2025-03-08 21:42:35:591 100 sec: 16902404 operations; 165401.4 current ops/sec; est completion in 3 minutes [INSERT: Count=1654056, Max=12151, Min=494, Avg=1207.66, 90=1613, 99=2945, 99.9=6467, 99.99=8567] 
+2025-03-08 21:42:45:591 110 sec: 18580307 operations; 167790.3 current ops/sec; est completion in 3 minutes [INSERT: Count=1677871, Max=15295, Min=453, Avg=1190.44, 90=1578, 99=2879, 99.9=6251, 99.99=8415] 
+2025-03-08 21:42:55:591 120 sec: 20247009 operations; 166670.2 current ops/sec; est completion in 2 minutes [INSERT: Count=1666682, Max=317439, Min=508, Avg=1198.46, 90=1605, 99=2677, 99.9=6315, 99.99=8115] 
+2025-03-08 21:43:05:591 130 sec: 21911403 operations; 166439.4 current ops/sec; est completion in 2 minutes [INSERT: Count=1664422, Max=14743, Min=497, Avg=1200.06, 90=1603, 99=2635, 99.9=6487, 99.99=9303] 
+2025-03-08 21:43:15:591 140 sec: 23566096 operations; 165469.3 current ops/sec; est completion in 2 minutes [INSERT: Count=1654697, Max=16927, Min=496, Avg=1207.18, 90=1623, 99=2707, 99.9=6643, 99.99=11863] 
+2025-03-08 21:43:25:591 150 sec: 25251317 operations; 168522.1 current ops/sec; est completion in 2 minutes [INSERT: Count=1685217, Max=13567, Min=493, Avg=1185.21, 90=1587, 99=2589, 99.9=5995, 99.99=7259] 
+2025-03-08 21:43:35:591 160 sec: 26918256 operations; 166693.9 current ops/sec; est completion in 2 minutes [INSERT: Count=1666986, Max=22351, Min=496, Avg=1198.29, 90=1616, 99=2705, 99.9=6351, 99.99=8011] 
+2025-03-08 21:43:45:591 170 sec: 28591554 operations; 167329.8 current ops/sec; est completion in 2 minutes [INSERT: Count=1673254, Max=12455, Min=452, Avg=1193.72, 90=1593, 99=2507, 99.9=6315, 99.99=8431] 
+2025-03-08 21:43:55:591 180 sec: 30257424 operations; 166587 current ops/sec; est completion in 1 minute [INSERT: Count=1665883, Max=15487, Min=502, Avg=1199.03, 90=1605, 99=2703, 99.9=6139, 99.99=7963] 
+2025-03-08 21:44:05:591 190 sec: 31947492 operations; 169006.8 current ops/sec; est completion in 1 minute [INSERT: Count=1690095, Max=12919, Min=492, Avg=1181.83, 90=1562, 99=2609, 99.9=6179, 99.99=7575] 
+2025-03-08 21:44:15:591 200 sec: 33627504 operations; 168001.2 current ops/sec; est completion in 1 minute [INSERT: Count=1679977, Max=16943, Min=480, Avg=1188.94, 90=1576, 99=2527, 99.9=6539, 99.99=8631] 
+2025-03-08 21:44:25:591 210 sec: 35295844 operations; 166834 current ops/sec; est completion in 1 minute [INSERT: Count=1668341, Max=13295, Min=491, Avg=1197.24, 90=1606, 99=2721, 99.9=6611, 99.99=8319] 
+2025-03-08 21:44:35:591 220 sec: 36950411 operations; 165456.7 current ops/sec; est completion in 1 minute [INSERT: Count=1654587, Max=13887, Min=483, Avg=1207.26, 90=1614, 99=2765, 99.9=6379, 99.99=8127] 
+2025-03-08 21:44:45:591 230 sec: 38597253 operations; 164684.2 current ops/sec; est completion in 1 minute [INSERT: Count=1646798, Max=13847, Min=497, Avg=1212.95, 90=1616, 99=2699, 99.9=6471, 99.99=8247] 
+2025-03-08 21:44:55:591 240 sec: 40277452 operations; 168019.9 current ops/sec; est completion in 58 seconds [INSERT: Count=1680191, Max=19503, Min=497, Avg=1188.79, 90=1574, 99=2547, 99.9=6535, 99.99=8527] 
+2025-03-08 21:45:05:591 250 sec: 41955270 operations; 167781.8 current ops/sec; est completion in 48 seconds [INSERT: Count=1677823, Max=16327, Min=486, Avg=1190.47, 90=1578, 99=2737, 99.9=6327, 99.99=8647] 
+2025-03-08 21:45:15:591 260 sec: 43628885 operations; 167361.5 current ops/sec; est completion in 38 seconds [INSERT: Count=1673684, Max=16463, Min=479, Avg=1193.46, 90=1579, 99=2525, 99.9=6367, 99.99=8735] 
+2025-03-08 21:45:25:592 270 sec: 45278754 operations; 164970.4 current ops/sec; est completion in 29 seconds [INSERT: Count=1649901, Max=12751, Min=483, Avg=1210.81, 90=1636, 99=2765, 99.9=6339, 99.99=8199] 
+2025-03-08 21:45:35:591 280 sec: 46935550 operations; 165696.17 current ops/sec; est completion in 19 seconds [INSERT: Count=1656706, Max=12615, Min=494, Avg=1205.51, 90=1616, 99=2779, 99.9=6227, 99.99=8191] 
+2025-03-08 21:45:45:591 290 sec: 48558805 operations; 162325.5 current ops/sec; est completion in 9 second [INSERT: Count=1623286, Max=16639, Min=489, Avg=1230.57, 90=1653, 99=2783, 99.9=6391, 99.99=8559] 
+2025-03-08 21:45:55:591 300 sec: 50000000 operations; 144119.5 current ops/sec; [CLEANUP: Count=199, Max=13, Min=0, Avg=1.73, 90=3, 99=7, 99.9=13, 99.99=13] [INSERT: Count=1441121, Max=16167, Min=460, Avg=1191.54, 90=1610, 99=3071, 99.9=5899, 99.99=8139] 
+2025-03-08 21:45:56:534 300 sec: 50000000 operations; 0 current ops/sec; [CLEANUP: Count=1, Max=2015231, Min=2014208, Avg=2014720, 90=2015231, 99=2015231, 99.9=2015231, 99.99=2015231] [INSERT: Count=0, Max=0, Min=9223372036854775807, Avg=�, 90=0, 99=0, 99.9=0, 99.99=0] 
+[OVERALL], RunTime(ms), 300943
+[OVERALL], Throughput(ops/sec), 166144.4193750976
+[TOTAL_GCS_PS_Scavenge], Count, 742
+[TOTAL_GC_TIME_PS_Scavenge], Time(ms), 3040
+[TOTAL_GC_TIME_%_PS_Scavenge], Time(%), 1.0101580698005934
+[TOTAL_GCS_PS_MarkSweep], Count, 1
+[TOTAL_GC_TIME_PS_MarkSweep], Time(ms), 18
+[TOTAL_GC_TIME_%_PS_MarkSweep], Time(%), 0.0059811990975035135
+[TOTAL_GCs], Count, 743
+[TOTAL_GC_TIME], Time(ms), 3058
+[TOTAL_GC_TIME_%], Time(%), 1.016139268898097
+[CLEANUP], Operations, 200
+[CLEANUP], AverageLatency(us), 10075.325
+[CLEANUP], MinLatency(us), 0
+[CLEANUP], MaxLatency(us), 2015231
+[CLEANUP], 50thPercentileLatency(us), 1
+[CLEANUP], 90thPercentileLatency(us), 3
+[CLEANUP], 95thPercentileLatency(us), 4
+[CLEANUP], 99thPercentileLatency(us), 13
+[CLEANUP], 99.99PercentileLatency(us), 2015231
+[CLEANUP], 99.99999PercentileLatency(us), 2015231
+[INSERT], Operations, 50000000
+[INSERT], AverageLatency(us), 1189.22966766
+[INSERT], MinLatency(us), 452
+[INSERT], MaxLatency(us), 317439
+[INSERT], 50thPercentileLatency(us), 1100
+[INSERT], 90thPercentileLatency(us), 1585
+[INSERT], 95thPercentileLatency(us), 1815
+[INSERT], 99thPercentileLatency(us), 2819
+[INSERT], 99.99PercentileLatency(us), 9111
+[INSERT], 99.99999PercentileLatency(us), 317183
+[INSERT], Return=OK, 50000000
